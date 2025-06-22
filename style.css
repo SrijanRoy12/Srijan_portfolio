@@ -713,3 +713,6 @@ h2{
 .social-links a {
     color: #f0f0f0; /* Lighter white */
 }
+body{
+  background-color: aliceblue;
+}
