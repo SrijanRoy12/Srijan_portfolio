@@ -32,6 +32,7 @@
 }
 .right-nav li a{
     color: rgb(253, 252, 252);
+    
     text-decoration: none;
     padding: 20px;
 }
@@ -42,10 +43,21 @@
     background-color: rgb(255, 255, 255);
 }
 body{
-    background-color: rgb(191, 196, 237);
+     background-color: rgb(191, 196, 237); 
+    background: url(portfolio\ background.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
+    animation: animatedBg 5s linear infinite;
+}
+@keyframes animatedBg{
+  100%{
+    filter: hue-rotate(360deg);
+  }
 }
 .home-body {
     display: flex;
@@ -63,6 +75,7 @@ body{
 }
 .left-home span{
     color: rgba(4, 113, 228, 0.933);
+    /color: rgb(192, 219, 242);/
     font-weight: bold;
     font-size: 48px;
 }
@@ -228,10 +241,15 @@ hr{
 }
 .internship-section {
     padding: 40px 20px;
-    background-color: rgba(136, 137, 139, 0.242);
+    /* background-color: rgba(136, 137, 139, 0.242); */
     font-family: 'Poppins', sans-serif;
 }
-
+#logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 .internship-wrapper {
     display: flex;
     justify-content: space-between;
@@ -389,6 +407,13 @@ button {
 .project a:hover {
     background-color: rgb(0, 86, 179);
 }
+.project img {
+    width: 100px;
+    position: center;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}   
 .contact-form {
     max-width: 500px;
     margin: 40px auto;
@@ -602,4 +627,91 @@ button:hover, .cv-button:hover, .project a:hover {
 .section.show, .home-body.show, .project.show, .contact-form.show {
     opacity: 1;
     transform: translateY(0);
+    
 } */
+
+/* Change text colors to lighter versions */
+
+/* Navigation */
+.left-nav {
+    font-size: 25px;
+    color: #f0f8ff; /* Changed from aliceblue to lighter */
+}
+
+.right-nav li a {
+    color: #f5f5f5; /* Changed from rgb(253, 252, 252) to lighter */
+}
+
+/* Home Section */
+h2{
+  color: rgb(216, 237, 252);
+}
+.left-home span {
+    color: rgba(100, 181, 246, 0.933); /* Lighter blue */
+}
+
+/* About Section */
+.section-left {
+    color: rgb(100, 181, 246); /* Lighter blue */
+}
+
+.part-one h2, .part-two h2 {
+    color: rgba(100, 181, 246, 0.933); /* Lighter blue */
+}
+
+.section-right .part-one p, .section-right .part-two p {
+    color: #e0e0e0; /* Lighter gray */
+}
+
+/* Skills Section */
+.skill h1 {
+    color: rgb(100, 181, 246); /* Lighter blue */
+}
+
+.skill-box h2 {
+    color: rgba(100, 181, 246, 0.933); /* Lighter blue */
+}
+
+.skill-box ul li {
+    color: #e0e0e0; /* Lighter gray */
+}
+
+/* Internships Section */
+.internship-header h1 {
+    color: rgb(100, 181, 246); /* Lighter blue */
+}
+
+.internship-container ul li {
+    color: #e0e0e0; /* Lighter gray */
+}
+
+/* Projects Section */
+.project-header h1 {
+    color: rgb(100, 181, 246); /* Lighter blue */
+}
+
+.project h2 {
+    color: rgba(100, 181, 246, 0.824); /* Lighter blue */
+}
+
+.project p {
+    color: rgba(240, 240, 240, 0.8); /* Lighter gray */
+}
+
+/* Contact Section */
+.contact-form h1 {
+    color: rgb(100, 181, 246); /* Lighter blue */
+}
+
+.contact-form label {
+    color: #e0e0e0; /* Lighter gray */
+}
+
+/* Footer */
+.footer {
+    color: #f0f0f0; /* Lighter white */
+}
+
+.social-links a {
+    color: #f0f0f0; /* Lighter white */
+}
