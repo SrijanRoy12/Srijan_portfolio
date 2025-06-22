@@ -9,9 +9,9 @@
 
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
     background: #104478;
     display: flex;
     justify-content: space-around;
@@ -63,26 +63,26 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100%;
+    block-size: 100vh;
+    inline-size: 100%;
     padding: 25px;
 }
 .left-home{
     display: flex;
-    width: 50%;
+    inline-size: 50%;
     font-size: 28px;
     padding: 20px;
 }
 .left-home span{
     color: rgba(4, 113, 228, 0.933);
-    /color: rgb(192, 219, 242);/
+    color: rgb(192, 219, 242);
     font-weight: bold;
     font-size: 48px;
 }
 .cv-button {
     display: flex;
-    margin-top: 15px;
-    width: 130px;
+    margin-block-start: 15px;
+    inline-size: 130px;
     padding: 10px 10px;
     font-size: 18px;
     font-weight: bold;
@@ -99,35 +99,34 @@ body{
 }
 
 .right-home {
-    width: 40%;
+    inline-size: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .right-home img{
-    width: 60%;
+    inline-size: 60%;
     border-radius: 190px;
 }
 hr{
     margin: 0px 30px;
     font-weight: bold;
-    height: 1.3px;
+    block-size: 1.3px;
     background-color:black ;
     border: none;
 }
-.section{
+.section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120vh;
-    width: 100%;
+    inline-size: 100%;
     padding: 25px;
 }
 .section div{
     justify-content: space-around;
 }
 .section-left{
-    width: 20%;
+    inline-size: 30%;
     text-align: center;
     font-size: 30px;
     margin: 5px;
@@ -136,24 +135,23 @@ hr{
 .section-right .part-one p ,.section-right .part-two p
 {
     font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  width: 620px;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 .section-right{
-    width: 600px;
+    inline-size: 60%;
     font-size: 25px;
-    padding-right: 40px;
+    padding-inline-end: 40px;
 }
 .part-one h2{
     font-size: 40px;
-    padding-top: 15px;
+    padding-block-start: 15px;
     color: rgba(4, 113, 228, 0.933);
 }
 .part-two h2{
     font-size: 40px;
-    padding-top: 15px;
+    padding-block-start: 15px;
     color: rgba(4, 113, 228, 0.933);
 }
 .skill {
@@ -164,20 +162,20 @@ hr{
 
 .skill h1 {
     color: rgb(4, 112, 228);
-    margin-bottom: 30px;
+    margin-block-end: 30px;
 }
 
 .skill-container {
-    display: flex;                                                                                                                                                                                                                                                              
+    display: flex;                            
     justify-content: center;
     gap: 30px;
     /* flex-wrap: wrap; */
 }
 
 .skill-box {
-    width: 45%;
-    min-width: 300px;
-    height: auto;
+    inline-size: 45%;
+    min-inline-size: 300px;
+    block-size: auto;
     padding: 30px;
     background-color: rgba(152, 152, 154, 0.219);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
@@ -193,8 +191,8 @@ hr{
 .skill-box h2 {
     font-size: 24px;
     color: rgba(4, 113, 228, 0.933);
-    margin-bottom: 20px;
-    text-align: left;
+    margin-block-end: 20px;
+    text-align: start;
 }
 
 .skill-box ul {
@@ -213,7 +211,7 @@ hr{
 .skill-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5px;
+    margin-block-end: 5px;
 }
 
 .skill-name {
@@ -226,15 +224,15 @@ hr{
 }
 
 .skill-bar {
-    width: 100%;
-    height: 8px;
+    inline-size: 100%;
+    block-size: 8px;
     background-color: #e0e0e0;
     border-radius: 4px;
     overflow: hidden;
 }
 
 .skill-level {
-    height: 100%;
+    block-size: 100%;
     background-color: rgb(23, 4, 228);
     border-radius: 4px;
     transition: width 0.5s ease;
@@ -245,17 +243,17 @@ hr{
     font-family: 'Poppins', sans-serif;
 }
 #logo {
-    width: 50px;
-    height: 50px;
+    inline-size: 50px;
+    block-size: 50px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-inline-end: 10px;
 }
 .internship-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
-    max-width: 1000px;
+    max-inline-size: 1000px;
     margin: 0 auto;
     flex-wrap: wrap;
 }
@@ -268,7 +266,7 @@ hr{
 
 .internship-header h1 {
     font-size: 32px;
-    margin-bottom: 10px;
+    margin-block-end: 10px;
     color: rgb(4, 112, 228);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
@@ -288,14 +286,14 @@ hr{
 
 .internship-container ul {
     list-style-type: disc;
-    padding-left: 20px;
+    padding-inline-start: 20px;
 }
 
 .internship-container ul li {
-    margin-bottom: 15px;
+    margin-block-end: 15px;
     font-size: 16px;
     color: #444;
-    height: 10;
+    block-size: 10;
 }
 button {
     border: none;
@@ -303,8 +301,8 @@ button {
     background-color:#0056b3;
     color:#eaeff4;
     display: flex;
-    height: 40px;
-    width: 150px;
+    block-size: 40px;
+    inline-size: 150px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -312,13 +310,13 @@ button {
 }
 .project-header{
     padding: 50px 20px;
-    padding-bottom: 10px;
+    padding-block-end: 10px;
     text-align: center;
     font-size: 30px;
 }
 .project-header h1{
     color: rgb(4, 112, 228);
-    margin-bottom: 30px;
+    margin-block-end: 30px;
 }
 .project-body {
     display: grid;
@@ -329,7 +327,7 @@ button {
 .project-header h1 {
     text-align: center;
     font-size: 2rem;
-    margin-top: 20px;
+    margin-block-start: 20px;
 }
 .project {
     background-color: #f8f8f8;
@@ -347,7 +345,7 @@ button {
 }
 .project a {
     display: inline-block;
-    margin-top: 10px;
+    margin-block-start: 10px;
     color: #007BFF;
     text-decoration: none;
     font-weight: bold;
@@ -366,8 +364,8 @@ button {
     }
 }
 .project {
-    max-width: 600px;
-    margin: 20px auto;
+    max-inline-size: 600px;
+    margin: 20px;
     padding: 20px;
     background-color: rgba(136, 137, 139, 0.242);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
@@ -384,18 +382,18 @@ button {
 .project h2 {
     font-size: 30px;
     color: rgba(4, 112, 228, 0.824);
-    margin-bottom: 10px;
+    margin-block-end: 10px;
 }
 
 .project p {
     font-size: 20px;
     color: rgba(7, 7, 7, 0.637);
-    margin-bottom: 10px;
+    margin-block-end: 10px;
 }
 
 .project a {
     display: inline-block;
-    margin-top: 10px;
+    margin-block-start: 10px;
     padding: 10px 15px;
     background-color: #007bff;
     color: #fff;
@@ -408,14 +406,14 @@ button {
     background-color: rgb(0, 86, 179);
 }
 .project img {
-    width: 100px;
+    inline-size: 100px;
     position: center;
-    height: 100px;
+    block-size: 100px;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-block-end: 15px;
 }   
 .contact-form {
-    max-width: 500px;
+    max-inline-size: 500px;
     margin: 40px auto;
     padding: 20px;
     background: rgba(136, 137, 139, 0.15);
@@ -431,7 +429,7 @@ button {
 }
 .contact-form h1 {
     color: rgb(4, 112, 228);
-    margin-bottom: 20px;
+    margin-block-end: 20px;
 }
 
 .contact-form label {
@@ -439,26 +437,26 @@ button {
     font-size: 18px;
     margin: 10px 0 5px;
     color: #333;
-    text-align: left;
+    text-align: start;
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
+    inline-size: 100%;
     padding: 5px;
-    margin-bottom: 15px;
+    margin-block-end: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
 }
 
 .contact-form textarea {
-    height: 100px;
+    block-size: 100px;
     resize: none;
 }
 
 .contact-form button {
-    width: 100%;
+    inline-size: 100%;
     padding: 12px;
     background-color: #007bff;
     color: white;
@@ -474,7 +472,7 @@ button {
 }
 
 #formMessage {
-    margin-top: 10px;
+    margin-block-start: 10px;
     font-size: 16px;
     color: green;
 }
@@ -485,12 +483,12 @@ button {
     padding: 20px;
     font-size: 16px;
     position: relative;
-    bottom: 0;
-    width: 100%;
+    inset-block-end: 0;
+    inline-size: 100%;
 }
 
 .social-links {
-    margin-bottom: 10px;
+    margin-block-end: 10px;
 }
 
 .social-links a {
@@ -510,7 +508,7 @@ button {
 small {
     display: block;
     font-size: 14px;
-    margin-top: 10px;
+    margin-block-start: 10px;
     opacity: 0.7;
     
 }
@@ -529,21 +527,21 @@ small {
     .home-body {
         flex-direction: column;
         text-align: center;
-        height: auto;
+        block-size: auto;
         padding: 20px;
     }
 
     .left-home {
-        width: 100%;
+        inline-size: 100%;
     }
 
     .right-home {
-        width: 80%;
+        inline-size: 80%;
     }
 
     .right-home img {
-        max-width: 80%;
-        height: auto;
+        max-inline-size: 80%;
+        block-size: auto;
     }
 
     .section, .skill-container {
@@ -552,7 +550,7 @@ small {
     }
 
     .section-left, .section-right, .skill-box {
-        width: 90%;
+        inline-size: 90%;
     }
 }
 
@@ -572,7 +570,7 @@ small {
     }
 
     .project {
-        width: 90%;
+        inline-size: 90%;
     }
 }
 /*  Image Animation (Profile Picture) */
