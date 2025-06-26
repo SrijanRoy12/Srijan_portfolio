@@ -3,32 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Srijan's Portfolio</title>
+    <title><strong>Srijan's Portfolio</strong></title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <!-- Removed duplicate stylesheet links -->
+     <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #06050a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #splash-screen h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #splash-screen p {
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #main-content {
+            display: none; /* initially hidden */
+            padding: 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+     </style>
+
 </head>
 <body>
-
+<!-- Splash Screen -->
+    <div id="splash-screen">
+        <h1>𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓶𝔂 𝓟𝓸𝓻𝓽𝓯𝓸𝓵𝓲𝓸</h1>
+        <p>𝖄𝖔𝖚'𝖛𝖊 𝕵𝖚𝖘𝖙 𝕰𝖓𝖙𝖊𝖗𝖊𝖉: 𝕿𝖍𝖊 𝕮𝖔𝖉𝖊𝖛𝖊𝖗𝖘𝖊 𝖔𝖋 𝕾𝖗𝖎𝖏𝖆𝖓 𝕽𝖔𝖞 </p>
+        <p> 𝓓𝓮𝓼𝓲𝓰𝓷𝓮𝓭, 𝓓𝓮𝓿𝓮𝓵𝓸𝓹𝓮𝓭 & 𝓓𝓮𝓹𝓵𝓸𝔂𝓮𝓭 𝔀𝓲𝓽𝓱 𝓟𝓻𝓮𝓬𝓲𝓼𝓲𝓸𝓷 </p>
+        <p> 𝐀𝐥𝐥 𝐑𝐢𝐠𝐡𝐭𝐬 𝐑𝐞𝐬𝐞𝐫𝐯𝐞𝐝 </p>
+    </div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="left-nav">
-            <b>Welcome to my Portfolio 😊....</b>
+            <b>𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐦𝐲 𝐏𝐨𝐫𝐭𝐟𝐨𝐥𝐢𝐨😊....</b>
         </div>
         <div class="right-nav">
             <ul id="side-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home"><strong>𝐇𝐨𝐦𝐞</strong></a></li>
+                <li><a href="#about"><strong>𝐀𝐛𝐨𝐮𝐭</strong></a></li>
+                <li><a href="#skills"><strong>𝐒𝐤𝐢𝐥𝐥𝐬</strong></a></li>
+                <li><a href="#projects"><strong>𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬</strong></a></li>
+                <li><a href="#contact"><strong>𝐂𝐨𝐧𝐭𝐚𝐜𝐭</strong></a></li>
             </ul>    
         </div>
     </nav>
     <!-- Home Section -->
     <section id="home" class="home-body">
         <div class="left-home">
-            <h2>Hi👋, <br> My name is <span>Srijan Roy</span>,<br> I am <span class="auto-type"></span></h2>
+            <h2>Hi👋, <br> My name is <span>𝐒𝐫𝐢𝐣𝐚𝐧 𝐑𝐨𝐲</span>,<br> I am <span class="auto-type"></span></h2>
         </div>
         <div class="right-home">
             <img src="srijan.jpg" alt="Srijan Image">
@@ -39,92 +96,94 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="section-left">
-            <h1>About ➡</h1>
+            <h1><strong>𝘼𝙗𝙤𝙪𝙩 ➡</strong></h1>
         </div>
         <div class="section-right">
             <div class="part-one">
-                <h2>🟡SUMMARY🟡</h2>
-                <p>I am a <strong>passionate Computer Science & Engineering student at IEM, Kolkata</strong>, with a keen interest in Artificial Intelligence and Machine Learning development. Eager to explore the realms of AI and ML, I am committed to leveraging technology to drive innovation and solve complex problems.
+                <h2>📝 𝙎𝙐𝙈𝙈𝘼𝙍𝙔 📝</h2>
+                <p>I am a <strong>𝘱𝘢𝘴𝘴𝘪𝘰𝘯𝘢𝘵𝘦 𝘊𝘰𝘮𝘱𝘶𝘵𝘦𝘳 𝘚𝘤𝘪𝘦𝘯𝘤𝘦 & 𝘌𝘯𝘨𝘪𝘯𝘦𝘦𝘳𝘪𝘯𝘨 𝘴𝘵𝘶𝘥𝘦𝘯𝘵 𝘢𝘵 𝘐𝘌𝘔, 𝘒𝘰𝘭𝘬𝘢𝘵𝘢</strong>, with a keen interest in Artificial Intelligence and Machine Learning development. Eager to explore the realms of 𝐀𝐈 𝐚𝐧𝐝 𝐌𝐋, I am committed to leveraging technology to drive innovation and solve complex problems.
                   <br>
-                  <br>🟡Areas of Interest🟡:
-                     <br><strong><b>🔵Artificial Intelligence.</b></strong>
-                     <br><strong><b>🔵Machine Learning.</b></strong>
-                     <br><strong><b>🔵Data Science.</b></strong>
-                     <br><strong><b>🔵Natural Language Processing.</b></strong>
-                     <br><strong><b>🔵Agentic AI / Gen AI.</b></strong>
+                  <br><strong>💡 𝘼𝙧𝙚𝙖𝙨 𝙤𝙛 𝙄𝙣𝙩𝙚𝙧𝙚𝙨𝙩 💡:</strong>
+                     <br><strong><b>✅𝘈𝘳𝘵𝘪𝘧𝘪𝘤𝘪𝘢𝘭 𝘐𝘯𝘵𝘦𝘭𝘭𝘪𝘨𝘦𝘯𝘤𝘦.</b></strong>
+                     <br><strong><b>✅𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨.</b></strong>
+                     <br><strong><b>✅𝘋𝘢𝘵𝘢 𝘚𝘤𝘪𝘦𝘯𝘤𝘦.</b></strong>
+                     <br><strong><b>✅𝘕𝘢𝘵𝘶𝘳𝘢𝘭 𝘓𝘢𝘯𝘨𝘶𝘢𝘨𝘦 𝘗𝘳𝘰𝘤𝘦𝘴𝘴𝘪𝘯𝘨.</b></strong>
+                     <br><strong><b>✅𝘈𝘨𝘦𝘯𝘵𝘪𝘤 𝘈𝘐 / 𝘎𝘦𝘯 𝘈𝘐.</b></strong>
                     <br>
-                    <br>🟡POSITIONS🟡: <br><strong>🔵Member of Placement Department Community IEM-UEM Group.</strong>
-                        <br><strong>🔵Industry Community member of IEM GenAI COE.</strong> 
-                        <br><strong>🔵Machine Learning Intern at Intern Pe.</strong>
-                        <br><strong>🔵Summer Intern at IEM - IEDC,GenAI COE.</strong>
-                        <br><strong>🔵Machine Learning Intern at Unified Mentor.</strong>
-                        <br><strong>🔵Generative AI Intern at Prodigy Infotech.</strong>
-                        <br><strong>🔵Machine Learning Intern at Code alpha.</strong>
-                        <br><strong>🔵Python Developer Intern at IEM GenAI COE.</strong>
-                        <br><strong>🔵Machine Learning Intern at ALFIDO Tech.</strong>
-                        <br><strong>🔵Junior Research Assistant at IEDC Lab, IEM.</p>
+                    <br>📌 <strong>𝙋𝙊𝙎𝙄𝙏𝙄𝙊𝙉𝙎</strong> 📌: <br><strong>✅𝘔𝘦𝘮𝘣𝘦𝘳 𝘰𝘧 𝘗𝘭𝘢𝘤𝘦𝘮𝘦𝘯𝘵 𝘋𝘦𝘱𝘢𝘳𝘵𝘮𝘦𝘯𝘵 𝘊𝘰𝘮𝘮𝘶𝘯𝘪𝘵𝘺 𝘐𝘌𝘔-𝘜𝘌𝘔 𝘎𝘳𝘰𝘶𝘱.</strong>
+                        <br><strong>✅𝘐𝘯𝘥𝘶𝘴𝘵𝘳𝘺 𝘊𝘰𝘮𝘮𝘶𝘯𝘪𝘵𝘺 𝘮𝘦𝘮𝘣𝘦𝘳 𝘰𝘧 𝘐𝘌𝘔 𝘎𝘦𝘯𝘈𝘐 𝘊𝘖𝘌.</strong>
+                        <br><strong>✅𝘔𝘦𝘮𝘣𝘦𝘳 𝘰𝘧 𝘎𝘰𝘰𝘨𝘭𝘦 𝘋𝘦𝘷𝘦𝘭𝘰𝘱𝘦𝘳 𝘎𝘳𝘰𝘶𝘱,𝘐𝘌𝘔.</strong>
+                        <br><strong>✅𝘔𝘦𝘮𝘣𝘦𝘳 𝘰𝘧 𝘊𝘰𝘥𝘪𝘯𝘨 𝘊𝘭𝘶𝘣 𝘐𝘯𝘥𝘪𝘢.</strong> 
+                        <br><strong>✅𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘐𝘯𝘵𝘦𝘳𝘯 𝘗𝘦.</strong>
+                        <br><strong>✅𝘚𝘶𝘮𝘮𝘦𝘳 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘐𝘌𝘔 - 𝘐𝘌𝘋𝘊,𝘎𝘦𝘯𝘈𝘐 𝘊𝘖𝘌.</strong>
+                        <br><strong>✅𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘜𝘯𝘪𝘧𝘪𝘦𝘥 𝘔𝘦𝘯𝘵𝘰𝘳.</strong>
+                        <br><strong>✅𝘎𝘦𝘯𝘦𝘳𝘢𝘵𝘪𝘷𝘦 𝘈𝘐 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘗𝘳𝘰𝘥𝘪𝘨𝘺 𝘐𝘯𝘧𝘰𝘵𝘦𝘤𝘩.</strong>
+                        <br><strong>✅𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘊𝘰𝘥𝘦 𝘢𝘭𝘱𝘩𝘢.</strong>
+                        <br><strong>✅𝘗𝘺𝘵𝘩𝘰𝘯 𝘋𝘦𝘷𝘦𝘭𝘰𝘱𝘦𝘳 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘐𝘌𝘔 𝘎𝘦𝘯𝘈𝘐 𝘊𝘖𝘌.</strong>
+                        <br><strong>✅𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘈𝘓𝘍𝘐𝘋𝘖 𝘛𝘦𝘤𝘩.</strong>
+                        <br><strong>✅𝘑𝘶𝘯𝘪𝘰𝘳 𝑅𝘦𝘴𝘦𝘢𝘳𝘤𝘩 𝘈𝘴𝘴𝘪𝘴𝘵𝘢𝘯𝘵 𝘢𝘵 𝘐𝘌𝘋𝘊 𝘓𝘢𝘣, 𝘐𝘌𝘔.</strong>
                     </strong>
             </div>
         
             <div class="part-two">
-                <h2>🟡ACHIEVEMENTS🟡</h2>
+                <h2>🏆 <strong>𝘼𝘾𝙃𝙄𝙀𝙑𝙀𝙈𝙀𝙉𝙏𝙎</strong> 🏆</h2>
                 <ul>
-                    <li><p>🔵Attended Study Abroad Program at <strong>National University Of Singapore (NUS)</strong> </p></li>
-                    <li><p>🔵Achieved Certifications based on <strong>AI/ML,CyberSecurity,DataScience From Coursera,Linkedln Learning</strong></p></li>
-                    <li><p>🔵Solved <strong>DSA problems</strong> on platforms like<strong>LeetCode, HackerRank.</strong> </p></li>
-                    <li><p>🔵Completed <strong>Internships</strong> on <strong>Artificial intelligence,Machine Learning and Python Developer</strong></p></li>
+                    <li><p>✅Attended Study Abroad Program at <strong>𝙉𝙖𝙩𝙞𝙤𝙣𝙖𝙡 𝙐𝙣𝙞𝙫𝙚𝙧𝙨𝙞𝙩𝙮 𝙊𝙛 𝙎𝙞𝙣𝙜𝙖𝙥𝙤𝙧𝙚 (𝙉𝙐𝙎)</strong> </p></li>
+                    <li><p>✅Achieved Certifications based on <strong>𝘼𝙄/𝙈𝙇,𝘾𝙮𝙗𝙚𝙧𝙎𝙚𝙘𝙪𝙧𝙞𝙩𝙮,𝘿𝙖𝙩𝙖𝙎𝙘𝙞𝙚𝙣𝙘𝙚 𝙁𝙧𝙤𝙢 𝘾𝙤𝙪𝙧𝙨𝙚𝙧𝙖,𝙇𝙞𝙣𝙠𝙚𝙙𝙡𝙣 𝙇𝙚𝙖𝙧𝙣𝙞𝙣𝙜</strong></p></li>
+                    <li><p>✅Solved <strong>DSA problems</strong> on platforms like<strong>𝙇𝙚𝙚𝙩𝘾𝙤𝙙𝙚, 𝙃𝙖𝙘𝙠𝙚𝙧𝙍𝙖𝙣𝙠.</strong> </p></li>
+                    <li><p>✅Completed <strong>Internships</strong> on <strong>𝘼𝙧𝙩𝙞𝙛𝙞𝙘𝙞𝙖𝙡 𝙞𝙣𝙩𝙚𝙡𝙡𝙞𝙜𝙚𝙣𝙘𝙚,𝙈𝙖𝙘𝙝𝙞𝙣𝙚 𝙇𝙚𝙖𝙧𝙣𝙞𝙣𝙜 𝙖𝙣𝙙 𝙋𝙮𝙩𝙝𝙤𝙣 𝘿𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧</strong></p></li>
                 </ul>
                 <!-- <a href="Srijan Roy Resume.pdf" download="srijan Roy Resume.pdf" class="cv-button">Download CV</a> -->
-                <a href="srijan_current Resume 2025.pdf" target="_blank" class="cv-button">View CV</a>
+                <a href="srijan_current Resume 2025.pdf" target="_blank" class="cv-button"><strong>👀 𝕍𝕚𝕖𝕨 ℝ𝕖𝕤𝕦𝕞𝕖</strong></a>
             </div>
         </div>
     </section>
 
    <!-- Skills Section -->
 <section id="skills" class="skill">
-    <h1>SKILLS</h1>
+    <h1>🛠️🧠 <strong>𝙎𝙆𝙄𝙇𝙇𝙎</strong> 🛠️🧠</h1>
     <div class="skill-container">
         <div class="skill-box">
-            <h2><strong>🟡COURSEWORK🟡</strong></h2>
+            <h2><strong>🧑‍🏫 𝘾𝙊𝙐𝙍𝙎𝙀𝙒𝙊𝙍𝙆 🧑‍🏫</strong></h2>
             <ul>
                 <li>
                     <div class="skill-item">
-                        <span class="skill-name">🟢Data Structures & Algorithms</span>
+                        <span class="skill-name">🟢𝘋𝘢𝘵𝘢 𝘚𝘵𝘳𝘶𝘤𝘵𝘶𝘳𝘦𝘴 & 𝘈𝘭𝘨𝘰𝘳𝘪𝘵𝘩𝘮𝘴</span>
                         <span class="skill-percentage">90%</span>
                     </div>
                     <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
                 </li>
                 <li>
                     <div class="skill-item">
-                        <span class="skill-name">🟢Object-Oriented Programming</span>
+                        <span class="skill-name">🟢𝘖𝘣𝘫𝘦𝘤𝘵-𝘖𝘳𝘪𝘦𝘯𝘵𝘦𝘥 𝘗𝘳𝘰𝘨𝘳𝘢𝘮𝘮𝘪𝘯𝘨</span>
                         <span class="skill-percentage">85%</span>
                     </div>
                     <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
                 </li>
                 <li>
                     <div class="skill-item">
-                        <span class="skill-name">🟢Machine Learning</span>
+                        <span class="skill-name">🟢𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨</span>
                         <span class="skill-percentage">90%</span>
                     </div>
                     <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
                 </li>
                 <li>
                     <div class="skill-item">
-                        <span class="skill-name">🟢Artificial intelligence</span>
+                        <span class="skill-name">🟢𝘈𝘳𝘵𝘪𝘧𝘪𝘤𝘪𝘢𝘭 𝘐𝘯𝘵𝘦𝘭𝘭𝘪𝘨𝘦𝘯𝘤𝘦</span>
                         <span class="skill-percentage">80%</span>
                     </div>
                     <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
                 </li>
                 <li>
                     <div class="skill-item">
-                        <span class="skill-name">🟢Natural Language processing</span>
+                        <span class="skill-name">🟢𝘕𝘢𝘵𝘶𝘳𝘢𝘭 𝘓𝘢𝘯𝘨𝘶𝘢𝘨𝘦 𝘗𝘳𝘰𝘤𝘦𝘴𝘴𝘪𝘯𝘨</span>
                         <span class="skill-percentage">75%</span>
                     </div>
                     <div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div>
                 </li>
                 <li>
                     <div class="skill-item">
-                        <span class="skill-name">🟢Database Management System</span>
+                        <span class="skill-name">🟢𝘋𝘢𝘵𝘢𝘣𝘢𝘴𝘦 𝘔𝘢𝘯𝘢𝘨𝘦𝘮𝘦𝘯𝘵 𝘚𝘺𝘴𝘵𝘦𝘮</span>
                         <span class="skill-percentage">88%</span>
                     </div>
                     <div class="skill-bar"><div class="skill-level" style="width: 88%;"></div></div>
@@ -132,32 +191,32 @@
             </ul>
         </div>
         <div class="skill-box">
-            <h2><strong>🟡PROGRAMMING SKILLS🟡</strong></h2>
+            <h2><strong>🟡𝙋𝙍𝙊𝙂𝙍𝘼𝙈𝙈𝙄𝙉𝙂 𝙎𝙆𝙄𝙇𝙇𝙎🟡</strong></h2>
             <ul>
                 <li>
                     <div class="skill-item">
-                        <span class="skill-name">🟢Python</span>
+                        <span class="skill-name">🟢𝘱𝘺𝘵𝘩𝘰𝘯</span>
                         <span class="skill-percentage">95%</span>
                     </div>
                     <div class="skill-bar"><div class="skill-level" style="width: 95%;"></div></div>
                 </li>
                 <li>
                     <div class="skill-item">
-                        <span class="skill-name">🟢Java</span>
+                        <span class="skill-name">🟢𝘑𝘢𝘷𝘢</span>
                         <span class="skill-percentage">85%</span>
                     </div>
                     <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
                 </li>
                 <li>
                     <div class="skill-item">
-                        <span class="skill-name">🟢C-Language</span>
+                        <span class="skill-name">🟢𝘊-𝘓𝘢𝘯𝘨𝘶𝘢𝘨𝘦</span>
                         <span class="skill-percentage">90%</span>
                     </div>
                     <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
                 </li>
                 <li>
                     <div class="skill-item">
-                        <span class="skill-name">🟢ML</span>
+                        <span class="skill-name">🟢𝘔𝘓</span>
                         <span class="skill-percentage">90%</span>
                     </div>
                     <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
@@ -171,17 +230,17 @@
     <div class="internship-wrapper">
         <!-- Left Part: Header -->
         <div class="internship-header">
-            <h1>🟡INTERNSHIPS🟡</h1>
+            <h1>🤝𝙄𝙉𝙏𝙀𝙍𝙉𝙎𝙃𝙄𝙋𝙎🤝</h1>
         </div>
 
         <!-- Right Part: Internship List -->
         <div class="internship-container">
             <ul>
-                <li><><p><img src="code alpha logo.jpeg" alt="logo" id="logo">🔵Completion of 1 month internship at <strong>CodeAlpha</strong> on <strong>Machine Learning.</strong><a href="code alpha certificate .pdf"><button><strong>View Certificate</strong></button></a></p></li>
-                <li><img src="unified mentor logo.png" alt="logo" id="logo"><p>🔵Completion of 1 month internship at <strong>Unified Mentor</strong> on <strong>Machine Learning.</strong><a href="unified mentor internship certificate.pdf"><button><strong>View Certificate</strong></button></a></p></li>
-                <li><img src="intern certify logo.jpeg" alt="logo" id="logo"><p>🔵Completion of 1 month internship at <strong>Intern Certify</strong> as <strong>Python Developer.</strong><a href="Interncertify.pdf"><button><strong>View Certificate</strong></button></a></p></li>
-                <li><img src="prodigy infotech logo.png" alt="logo" id="logo"><p>🔵Completion of 1 month internship at <strong>Prodigy Infotech</strong> on <strong>Generative AI.</strong><a href="prodigy infotech certificate.pdf    "><button><strong>View Certificate</strong></button></a></p></li>
-                <li><img src="alfido tech logo.png" alt="logo" id="logo"><p>🔵Completion of 1 month internship at <strong>Alfido Tech</strong> on <strong>Generative AI.</strong><a href="Srijan Roy ALFIDO internship CERTIFICATE.pdf    "><button><strong>View Certificate</strong></button></a></p></li>
+                <li><><p><img src="code alpha logo.jpeg" alt="logo" id="logo">✅Completion of 1 month internship at <strong>𝘊𝘰𝘥𝘦𝘈𝘭𝘱𝘩𝘢</strong> on <strong>Machine Learning.</strong><a href="code alpha certificate .pdf"><button><strong>👀 𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></button></a></p></li>
+                <li><img src="unified mentor logo.png" alt="logo" id="logo"><p>✅Completion of 1 month internship at <strong>𝘜𝘯𝘪𝘧𝘪𝘦𝘥 𝘔𝘦𝘯𝘵𝘰𝘳</strong> on <strong>Machine Learning.</strong><a href="unified mentor internship certificate.pdf"><button><strong>👀 𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></button></a></p></li>
+                <li><img src="intern certify logo.jpeg" alt="logo" id="logo"><p>✅Completion of 1 month internship at <strong>𝘐𝘯𝘵𝘦𝘳𝘯 𝘊𝘦𝘳𝘵𝘪𝘧𝘺</strong> as <strong>Python Developer.</strong><a href="Interncertify.pdf"><button><strong>👀 𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></button></a></p></li>
+                <li><img src="prodigy infotech logo.png" alt="logo" id="logo"><p>✅Completion of 1 month internship at <strong>𝘗𝘳𝘰𝘥𝘪𝘨𝘺 𝘐𝘯𝘧𝘰𝘵𝘦𝘤𝘩</strong> on <strong>Generative AI.</strong><a href="prodigy infotech certificate.pdf    "><button><strong>👀 𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></button></a></p></li>
+                <li><img src="alfido tech logo.png" alt="logo" id="logo"><p>✅Completion of 1 month internship at <strong>𝘈𝘭𝘧𝘪𝘥𝘰 𝘛𝘦𝘤𝘩</strong> on <strong>Generative AI.</strong><a href="Srijan Roy ALFIDO internship CERTIFICATE.pdf    "><button><strong>👀 𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></button></a></p></li>
             </ul>
             </ul>
         </div>
@@ -195,10 +254,10 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="project-header">
-            <h1>🟡PROJECTS🟡</h1>
+            <h1>🎓 𝙋𝙍𝙊𝙅𝙀𝘾𝙏𝙎 🎓</h1>
         </div>
         <div class="project-body">        <div class="project">
-            <h2>🟢Emotion-Recognition-From-Speech</h2>
+            <h2>😡😁😔🙂‍↕ 𝓔𝓶𝓸𝓽𝓲𝓸𝓷 𝓡𝓮𝓬𝓸𝓰𝓷𝓲𝓽𝓲𝓸𝓷 𝓕𝓻𝓸𝓶 𝓢𝓹𝓮𝓮𝓬𝓱</h2>
             <p><strong>Description:</strong> A machine learning project for recognizing emotions from speech by analyzing vocal features like pitch, tone, and intensity to enhance human-computer interaction and emotional analysis.</p>
             <p><strong>Tools & Technologies:</strong> 
                 <br>
@@ -207,10 +266,10 @@
                 <br>
                 <b>KaggleHub :</b> kagglehub is utilized to directly download the RAVDESS emotional speech audio dataset,
             </p>
-            <a href="https://github.com/SrijanRoy12/Emotion-Recognition-From-Speech-/tree/main" target="_blank">View Project</a>
+            <a href="https://github.com/SrijanRoy12/Emotion-Recognition-From-Speech-/tree/main" target="_blank"><strong>👀 View Project</strong></a>
         </div>
         <div class="project">
-            <h2>🟢Disease-Prediction-From-Medical-Data</h2>
+            <h2>⚕🩺💊 𝓓𝓲𝓼𝓮𝓪𝓼𝓮 𝓟𝓻𝓮𝓭𝓲𝓬𝓽𝓲𝓸𝓷 𝓕𝓻𝓸𝓶 𝓜𝓮𝓭𝓲𝓬𝓪𝓵 𝓓𝓪𝓽𝓪</h2>
             <p><strong>Description:</strong> A machine learning model that predict diseases using patient data for early detection, better outcomes, and optimized healthcare resources.</p>
             <p><strong>Tools & Technologies:</strong> 
                 <br>
@@ -219,10 +278,10 @@
                 <b>TensorFlow/Keras :</b> For building and training the neural network model.
                 <b>StandardScaler and LabelEncoder:</b> For feature scaling and target encoding.
             </p>
-            <a href="https://github.com/SrijanRoy12/Disease-Prediction-From-Medical-Data" target="_blank">View Project</a>
+            <a href="https://github.com/SrijanRoy12/Disease-Prediction-From-Medical-Data" target="_blank"><strong>👀 View Project</strong></a>
             </div>
             <div class="project">
-            <h2>🟢Diabetes-Prediction-using-Ml</h2>
+            <h2>🏥 𝓓𝓲𝓪𝓫𝓮𝓽𝓮𝓼 𝓟𝓻𝓮𝓭𝓲𝓬𝓽𝓲𝓸𝓷 𝓤𝓼𝓲𝓷𝓰 𝓜𝓛</h2>
             <p><strong>Description:</strong> A machine learning model that predicts diabetes using patient data for early detection, improved treatment planning, and better healthcare outcomes.</p>
             <p><strong>Tools & Technologies:</strong> 
             <br>
@@ -234,10 +293,26 @@
             <br>
             <b>Jupyter Notebook/Google Colab:</b> Used as the development environment for writing and testing code.
             </p>
-            <a href="https://github.com/SrijanRoy12/Diabetes-Prediction-using-Ml" target="_blank">View Project</a>
+            <a href="https://github.com/SrijanRoy12/Diabetes-Prediction-using-Ml" target="_blank"><strong>👀 View Project</strong></a>
         </div>
+        <div class="project">
+        <h2>🌤️ 𝓦𝓮𝓪𝓽𝓱𝓮𝓻 𝓟𝓾𝓵𝓼𝓮 𝓟𝓻𝓸 - 𝓡𝓮𝓪𝓵 𝓣𝓲𝓶𝓮 𝓦𝓮𝓪𝓽𝓱𝓮𝓻 𝓕𝓸𝓻𝓮𝓬𝓪𝓼𝓽𝓲𝓷𝓰 𝓐𝓹𝓹</h2>
+        <p><strong>Description:</strong> A sleek and interactive web application that provides real-time weather data, air quality index, and hourly forecasts using city input or your current location. Designed for usability and smart forecasting.</p>
+        <p><strong>Tools & Technologies:</strong> 
+        <br>
+        <b>HTML, CSS, JavaScript:</b> Built a responsive and visually appealing frontend with animated transitions and interactive features.
+        <br>
+        <b>OpenWeatherMap API:</b> Used to fetch live weather, AQI, and forecast data.
+        <br>
+        <b>Dynamic UI Features:</b> Includes sun/moon switching, background changes based on weather, and animated splash screen.
+        <br>
+        <b>Responsive Design:</b> Optimized for both desktop and mobile views with media queries and adaptive layouts.
+        </p>
+        <a href="https://srijanroy12.github.io/Weather-Forecasting-App/" target="_blank"><strong>👀 View Project</strong></a>
+    </div>
+
          <div class="project">
-            <h2>🟢Titanic-Survival-Prediction</h2>
+            <h2>🚢 𝓣𝓲𝓽𝓪𝓷𝓲𝓬-𝓢𝓾𝓻𝓿𝓲𝓿𝓪𝓵-𝓟𝓻𝓮𝓭𝓲𝓬𝓽𝓲𝓸𝓷</h2>
             <p><strong>Description:</strong> This project predicts passenger survival on the Titanic using ML models like Logistic Regression and Random Forest. Data preprocessing, feature engineering, and model evaluation are done using Python and scikit-learn.</p>
             <p><strong>Tools & Technologies:</strong> 
             <br>
@@ -249,10 +324,10 @@
             <br>
             <b>Jupyter Notebook/Google Colab:</b> Used as the development environment for writing, testing, and visualizing model performance.
            </p>
-            <a href="https://github.com/SrijanRoy12/Titanic-Survival-Prediction-ALFIDO" target="_blank">View Project</a>
+            <a href="https://github.com/SrijanRoy12/Titanic-Survival-Prediction-ALFIDO" target="_blank"><strong>👀 View Project</strong></a>
         </div>
         <div class="project">
-            <h2>🟢Handwritten-Character-Recognition</h2>
+            <h2>📝 𝓗𝓪𝓷𝓭𝔀𝓻𝓲𝓽𝓽𝓮𝓷 𝓒𝓱𝓪𝓻𝓪𝓬𝓽𝓮𝓻 𝓡𝓮𝓬𝓸𝓰𝓷𝓲𝓽𝓲𝓸𝓷</h2>
             <p><strong>Description:</strong> A machine learning model to recognize handwritten characters (A-Z, 0-9) using image processing and neural networks for text digitization and analysis.</p>
             <p><strong>Tools & Technologies:</strong> <br>
                 <b>TensorFlow/Keras :</b>for building and training the CNN model for image classification.<br>
@@ -260,10 +335,10 @@
                 <b>MNIST and a custom A-Z handwritten letter dataset:</b> For training and evaluation
                
             </p>
-            <a href="https://github.com/SrijanRoy12/Handwritten-Character-Recognition" target="_blank">View Project</a>
+            <a href="https://github.com/SrijanRoy12/Handwritten-Character-Recognition" target="_blank"><strong>👀 View Project</strong></a>
         </div>
         <div class="project">
-            <h2>🟢Credit-Scoring-Model</h2>
+            <h2>💳 𝓒𝓻𝓮𝓭𝓲𝓽-𝓢𝓬𝓸𝓻𝓲𝓷𝓰-𝓜𝓸𝓭𝓮𝓵</h2>
             <p><strong>Description:</strong> This project aims to build a machine learning credit scoring model. It will predict loan repayment likelihood to help financial institutions make better lending decisions and minimize risks.</p>
             <p><strong>Tools & Technologies:</strong> 
                 <b>Python Libraries</b> -libraries like pandas, NumPy, and scikit-learn for data handling, preprocessing, and machine learning.
@@ -272,10 +347,10 @@
                 <br>
                 <b>Evaluation Metrics</b>  -metrics like accuracy, classification report, and confusion matrix to assess model performance.
             </p>
-            <a href="https://github.com/SrijanRoy12/Credit-Scoring-Model-" target="_blank">View Project</a>
+            <a href="https://github.com/SrijanRoy12/Credit-Scoring-Model-" target="_blank"><strong>👀 View Project</strong></a>
         </div>
         <div class="project">
-            <h2>🟢Smart City Multi-Agent Simulation </h2>
+            <h2>🌆 𝓢𝓶𝓪𝓻𝓽 𝓒𝓲𝓽𝔂 𝓜𝓾𝓵𝓽𝓲-𝓐𝓰𝓮𝓷𝓽 𝓢𝓲𝓶𝓾𝓵𝓪𝓽𝓲𝓸𝓷 </h2>
             <p><strong>Description:</strong> This project focuses on developing a Smart City Multi-Agent Simulation using agentic AI frameworks. The goal is to simulate urban scenarios like traffic control, energy management, emergency response, and healthcare using intelligent agents that coordinate and make autonomous decisions to optimize city operations.</p>
             <p><strong>Tools & Technologies:</strong> 
                 <b>Python Libraries</b> -Libraries like pandas, NumPy, and matplotlib for data handling and visualization.
@@ -286,10 +361,10 @@
                 <br>
                 <b>Simulation & Evaluation:</b> Tested multi-agent interactions in smart city scenarios and evaluated efficiency, coordination, and real-time responsiveness.
                 </p>
-            <a href="https://iem-summer-internship-aymvob2yhbn8ad8mthgxnm.streamlit.app/" target="_blank">View Project</a>
+            <a href="https://iem-summer-internship-aymvob2yhbn8ad8mthgxnm.streamlit.app/" target="_blank"><strong>👀 View Project</strong></a>
         </div>
         <div class="project">
-            <h2>🟢IRIS-classification</h2>
+            <h2>🌺 𝓘𝓡𝓘𝓢-𝓬𝓵𝓪𝓼𝓼𝓲𝓯𝓲𝓬𝓪𝓽𝓲𝓸𝓷</h2>
             <p><strong>Description:</strong> This project uses ML models like Logistic Regression and Decision Tree to classify iris flowers into three species (Setosa, Versicolor, Virginica) based on sepal and petal measurements. Implemented in Python using scikit-learn.</p>
            <p><strong>Tools & Technologies:</strong> 
            <br>
@@ -301,10 +376,10 @@
         <br>
         <b>Jupyter Notebook/Google Colab:</b> Used for writing, testing, and visualizing the model in an interactive environment.
         </p>
-            <a href="https://github.com/SrijanRoy12/iris-classification-ALFIDO" target="_blank">View Project</a>
+            <a href="https://github.com/SrijanRoy12/iris-classification-ALFIDO" target="_blank"><strong>👀 View Project</strong></a>
         </div>
          <div class="project">
-            <h2>🟢Housing-prediction using ML</h2>
+            <h2>🏠 𝓗𝓸𝓾𝓼𝓲𝓷𝓰-𝓹𝓻𝓮𝓭𝓲𝓬𝓽𝓲𝓸𝓷 𝓾𝓼𝓲𝓷𝓰 𝓜𝓛</h2>
             <p><strong>Description:</strong> This project uses the XGBoost regression model to predict house prices based on features like area, location, number of rooms, etc. Built with Python, Pandas, and Scikit-learn.</p>
             <p><strong>Tools & Technologies:</strong> 
             <br>
@@ -316,10 +391,10 @@
             <br>
             <b>Jupyter Notebook/Google Colab:</b> Used as the coding environment for implementation and testing.
             </p>
-            <a href="https://github.com/SrijanRoy12/Housing-prediction-ALFIDO" target="_blank">View Project</a>
+            <a href="https://github.com/SrijanRoy12/Housing-prediction-ALFIDO" target="_blank"><strong>👀 View Project</strong></a>
         </div>
         <div class="project">
-            <h2>🟢Image-to-Image-translation-with-cgan</h2>
+            <h2>📷 𝓘𝓶𝓪𝓰𝓮 𝓽𝓸 𝓘𝓶𝓪𝓰𝓮 𝓣𝓻𝓪𝓷𝓼𝓵𝓪𝓽𝓲𝓸𝓷 𝔀𝓲𝓽𝓱 𝓒𝓖𝓐𝓝</h2>
             <p><strong>Description:</strong>This script implements a Pix2Pix Generative Adversarial Network (GAN) for image-to-image translation, specifically for the "facades" dataset, aiming to generate architectural facades from input images.</p>
             <p><strong>Tools & Technologies:</strong> 
                 <br>
@@ -328,10 +403,10 @@
                 <br>
                 <b>Dataset :</b> The "facades" dataset, accessed via a URL and tf.keras.utils.get_file, provides the training and testing images for the image translation task.
             </p>
-            <a href="https://github.com/SrijanRoy12/image-to-image-translation-with-cgan" target="_blank">View Project</a>
+            <a href="https://github.com/SrijanRoy12/image-to-image-translation-with-cgan" target="_blank"><strong>👀 View Project</strong></a>
         </div>
         <div class="project">
-            <h2>🟢Text generation with markov chains</h2>
+            <h2>💬 𝓣𝓮𝔁𝓽 𝓖𝓮𝓷𝓮𝓻𝓪𝓽𝓲𝓸𝓷 𝓦𝓲𝓽𝓱  𝓜𝓪𝓻𝓴𝓸𝓿 𝓒𝓱𝓪𝓲𝓷𝓼</h2>
             <p><strong>Description:</strong>This is a Markov Chain text generator. It learns word sequences from training text and then generates new text based on these learned probabilities.</p>
             <p><strong>Tools & Technologies:</strong> 
                 <br>
@@ -340,7 +415,7 @@
                 <br>
                 <b>random :</b> A built-in Python module used for introducing randomness in the text generation process, specifically for selecting the next word from the possible following words based on the learned probabilities in the Markov Chain.
             </p>
-            <a href="https://github.com/SrijanRoy12/text-generation-with-markov-chains/tree/main" target="_blank">View Project</a>
+            <a href="https://github.com/SrijanRoy12/text-generation-with-markov-chains/tree/main" target="_blank"><strong>👀 View Project</strong></a>
         </div></div>
 
     </section>
@@ -350,7 +425,7 @@
      <!-- Projects Section -->
     <section id="projects">
         <div class="project-header">
-            <h1>🟡CERTIFICATIONS🟡</h1>
+            <h1>🏆𝘾𝙀𝙍𝙏𝙄𝙁𝙄𝘾𝘼𝙏𝙄𝙊𝙉𝙎🏆</h1>
         </div>
         <div class="project-body">        
         <!-- <div class="project">
@@ -374,8 +449,8 @@
     <img id="CERTIFICATE" src="nus logo.png" alt="CERTIFICATION logo">
   </div>
   <div class="certificate-details">
-    <h2>🟢 Study Abroad Program at NUS (National University Of Singapore)</h2>
-    <a href="nus.pdf" target="_blank">View Certificate</a>
+    <h2>🏅 𝙎𝙩𝙪𝙙𝙮 𝘼𝙗𝙧𝙤𝙖𝙙 𝙋𝙧𝙤𝙜𝙧𝙖𝙢 𝙖𝙩 𝙉𝙐𝙎 (𝙉𝙖𝙩𝙞𝙤𝙣𝙖𝙡 𝙐𝙣𝙞𝙫𝙚𝙧𝙨𝙞𝙩𝙮 𝙊𝙛 𝙎𝙞𝙣𝙜𝙖𝙥𝙤𝙧𝙚)</h2>
+    <a href="nus.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
   </div>
 </div>
 
@@ -385,8 +460,8 @@
     <img src="cybersecurity and iot.png" alt="CERTIFICATION logo">
   </div>
   <div class="certificate-details">
-    <h2>🟢 Cybersecurity and IoT</h2>
-    <a href="cybersecurity and iot.pdf" target="_blank">View Certificate</a>
+    <h2>🏅 𝘾𝙮𝙗𝙚𝙧𝙨𝙚𝙘𝙪𝙧𝙞𝙩𝙮 𝙖𝙣𝙙 𝙄𝙊𝙏</h2>
+    <a href="cybersecurity and iot.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
   </div>
 </div>
 
@@ -396,8 +471,8 @@
     <img src="Artifical Intelligence and legal issues.jpg" alt="CERTIFICATION logo">
   </div>
   <div class="certificate-details">
-    <h2>🟢 Artificial Intelligence and Legal Issues</h2>
-    <a href="artificial intelligence and legal issues.pdf" target="_blank">View Certificate</a>
+    <h2>🏅 𝘼𝙧𝙩𝙞𝙛𝙞𝙘𝙖𝙡 𝙄𝙣𝙩𝙚𝙡𝙡𝙞𝙜𝙚𝙣𝙘𝙚 𝙖𝙣𝙙 𝙇𝙚𝙜𝙖𝙡 𝙄𝙨𝙨𝙪𝙚𝙨</h2>
+    <a href="artificial intelligence and legal issues.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
   </div>
 </div>
 
@@ -407,8 +482,8 @@
     <img src="Introduction to ML on AWS.png" alt="CERTIFICATION logo">
   </div>
   <div class="certificate-details">
-    <h2>🟢 Introduction to ML on AWS</h2>
-    <a href="Introduction to ml on AWS.pdf" target="_blank">View Certificate</a>
+    <h2>🏅 𝐈𝐧𝐭𝐫𝐨𝐝𝐮𝐜𝐭𝐢𝐨𝐧 𝐭𝐨 𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠 𝐨𝐧 𝐀𝐖𝐒</h2>
+    <a href="Introduction to ml on AWS.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
   </div>
 </div>
 
@@ -418,8 +493,8 @@
     <img src="Artificial Intelligence for Everyone.png" alt="CERTIFICATION logo">
   </div>
   <div class="certificate-details">
-    <h2>🟢 Artificial Intelligence for Everyone</h2>
-    <a href="AI For everyone .pdf" target="_blank">View Certificate</a>
+    <h2>🏅 𝘼𝙧𝙩𝙞𝙛𝙞𝙘𝙞𝙖𝙡 𝙄𝙣𝙩𝙚𝙡𝙡𝙞𝙜𝙚𝙣𝙘𝙚 𝙛𝙤𝙧 𝙀𝙫𝙚𝙧𝙮𝙤𝙣𝙚</h2>
+    <a href="AI For everyone .pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
   </div>
 </div>
 
@@ -429,8 +504,8 @@
     <img src="Delloite.png" alt="CERTIFICATION logo">
   </div>
   <div class="certificate-details">
-    <h2>🟢 Delloite Data Analytics</h2>
-    <a href="deloitte data analytics.pdf" target="_blank">View Certificate</a>
+    <h2>🏅 𝘿𝙚𝙡𝙤𝙞𝙩𝙩𝙚 𝘿𝙖𝙩𝙖 𝘼𝙣𝙖𝙡𝙮𝙩𝙞𝙘𝙨</h2>
+    <a href="deloitte data analytics.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
   </div>
 </div> 
 
@@ -440,8 +515,8 @@
     <img src="Delloite.png" alt="CERTIFICATION logo">
   </div>
   <div class="certificate-details">
-    <h2>🟢 Delloite Cyber Job Simulation </h2>
-    <a href="deloitee certificate 1 - Copy.pdf" target="_blank">View Certificate</a>
+    <h2>🏅 𝘿𝙚𝙡𝙤𝙞𝙩𝙩𝙚 𝘾𝙮𝙗𝙚𝙧 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣</h2>
+    <a href="deloitee certificate 1 - Copy.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
   </div>
 </div>
 
@@ -451,8 +526,8 @@
     <img src="Delloite.png" alt="CERTIFICATION logo">
   </div>
   <div class="certificate-details">
-    <h2>🟢 Delloite Technology	Job	Simulation </h2>
-    <a href="deloitee certificate 2 - Copy.pdf" target="_blank">View Certificate</a>
+    <h2>🏅 𝘿𝙚𝙡𝙤𝙞𝙩𝙩𝙚 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣</h2>
+    <a href="deloitee certificate 2 - Copy.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
   </div>
 </div>
 
@@ -462,8 +537,8 @@
     <img src="Introduction to Cyber Attacks.jpg" alt="CERTIFICATION logo">
   </div>
   <div class="certificate-details">
-    <h2>🟢 Introduction to Cyber Attacks</h2>
-    <a href="introduction to cyber attacks .pdf" target="_blank">View Certificate</a>
+    <h2>🏅 𝙄𝙣𝙩𝙧𝙤𝙙𝙪𝙘𝙩𝙞𝙤𝙣 𝙏𝙤 𝘾𝙮𝙗𝙚𝙧 𝘼𝙩𝙩𝙖𝙘𝙠𝙨</h2>
+    <a href="introduction to cyber attacks .pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
   </div>
 </div>
 
@@ -472,18 +547,18 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact-form">
-        <h1>Contact Me</h1>
+        <h1><strong>📞 𝘾𝙤𝙣𝙩𝙖𝙘𝙩 𝙈𝙚</strong></h1>
         <form id="contactForm">
-            <label for="name"><b>Name</b></label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <label for="name"><b><strong>🤵‍♂ 𝙉𝙖𝙢𝙚</strong></b></label>
+            <input type="text" id="name" name="name" placeholder="Enter your name ...." required>
     
-            <label for="email"><b>Email</b></label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-    
-            <label for="message"><b>Message</b></label>
-            <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
-    
-            <button type="submit">Send Message</button>
+            <label for="email"><b><strong>📧 𝙀𝙢𝙖𝙞𝙡</strong></b></label>
+            <input type="email" id="email" name="email" placeholder="Enter your email ...." required>
+
+            <label for="message"><b><strong>💬 𝙈𝙚𝙨𝙨𝙖𝙜𝙚</strong></b></label>
+            <textarea id="message" name="message" placeholder="Write your message ...." required></textarea>
+
+            <button type="submit"><strong>👉🏻 𝙎𝙚𝙣𝙙 𝙈𝙚𝙨𝙨𝙖𝙜𝙚</strong></button>
         </form>
         <p id="formMessage"></p>
     </section>
@@ -491,15 +566,21 @@
     <!-- Footer -->
     <div class="footer">
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/srijan-roy-29bb19256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/srijan-roy-iemians/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             <a href="https://github.com/SrijanRoy12" target="_blank"><i class="fa-brands fa-square-github"></i></a>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=roysrijan53@gmail.com"><i class="fa-regular fa-envelope"></i></a>
             <a href="https://x.com/home" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
             <a href="https://www.instagram.com/its_ur_roy123/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
         </div>
-        <small>© 2025 Srijan's Portfolio | All rights reserved</small>
+        <small><strong>© 2025 𝙎𝙧𝙞𝙟𝙖𝙣'𝙨 𝙋𝙤𝙧𝙩𝙛𝙤𝙡𝙞𝙤 | 𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝙗𝙮 𝙋𝙖𝙨𝙨𝙞𝙤𝙣 — 𝙎𝙧𝙞𝙟𝙖𝙣 𝙍𝙤𝙮 | 𝘼𝙡𝙡 𝙧𝙞𝙜𝙝𝙩𝙨 𝙧𝙚𝙨𝙚𝙧𝙫𝙚𝙙</strong></small>
     </div>
-
+    <script>
+        // Show splash screen for 5 seconds, then show main content
+        setTimeout(function() {
+            document.getElementById('splash-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }, 5000); // 5000 milliseconds = 5 seconds
+    </script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="index.js"></script>
 </body>
