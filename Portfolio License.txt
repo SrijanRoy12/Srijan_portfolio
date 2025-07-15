@@ -1,0 +1,27 @@
+Copyright © 2025 Srijan Roy  
+All Rights Reserved.
+
+This repository, including but not limited to its codebase, visual design, layout, content, and associated assets (hereinafter referred to as the "Portfolio"), is the sole intellectual property of Srijan Roy.
+
+Unauthorized copying, reproduction, modification, distribution, publication, display, or transmission of any part of this Portfolio, in any form or by any means — whether digital, physical, or otherwise — is strictly prohibited without the express written permission of the author.
+
+You are explicitly NOT authorized to:
+- Use or replicate any code or design for commercial or educational projects
+- Publish or redistribute any portion of this work
+- Create derivative works or adaptations
+- Use this portfolio as a base template or framework for your own projects
+- Remove author attribution or disclaim ownership
+
+This Portfolio is made publicly accessible **for viewing purposes only**, intended to showcase the professional capabilities of the author. Its availability on this platform **does not constitute a waiver of any rights** or permission for reuse.
+
+Any violation of these terms will be considered a **breach of intellectual property rights** and may result in legal action under applicable international copyright and intellectual property laws.
+
+If you wish to request permission to use or reference any part of this work, please contact:
+
+📧 roysrijan53@gmail.com  
+📍 Owner & Author: Srijan Roy
+
+---
+
+**Legal Notice:**  
+This license overrides any implicit permissions typically assumed from public GitHub repositories. By accessing or interacting with this repository, you agree to be bound by the above terms.
