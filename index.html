@@ -60,28 +60,244 @@
 
 </head>
 <body>
-<!-- Splash Screen -->
-    <div id="splash-screen">
-        <h1>𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓶𝔂 𝓟𝓸𝓻𝓽𝓯𝓸𝓵𝓲𝓸</h1>
-        <p>𝖄𝖔𝖚'𝖛𝖊 𝕵𝖚𝖘𝖙 𝕰𝖓𝖙𝖊𝖗𝖊𝖉: 𝕿𝖍𝖊 𝕮𝖔𝖉𝖊𝖛𝖊𝖗𝖘𝖊 𝖔𝖋 𝕾𝖗𝖎𝖏𝖆𝖓 𝕽𝖔𝖞 </p>
-        <p> 𝓓𝓮𝓼𝓲𝓰𝓷𝓮𝓭, 𝓓𝓮𝓿𝓮𝓵𝓸𝓹𝓮𝓭 & 𝓓𝓮𝓹𝓵𝓸𝔂𝓮𝓭 𝔀𝓲𝓽𝓱 𝓟𝓻𝓮𝓬𝓲𝓼𝓲𝓸𝓷 </p>
-        <p> 𝐀𝐥𝐥 𝐑𝐢𝐠𝐡𝐭𝐬 𝐑𝐞𝐬𝐞𝐫𝐯𝐞𝐝 </p>
+
+
+
+
+
+
+<!-- Animated Splash Screen -->
+<div id="splash-screen" class="splash-animation">
+  <div class="splash-content">
+    <div class="splash-logo"></div>
+    <h1 class="splash-title">𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓶𝕪 𝓟𝓸𝓻𝓽𝓯𝓸𝓵𝓲𝓸</h1>
+    <div class="splash-text-container">
+      <p class="splash-text line-1">𝖄𝖔𝖚'𝖛𝖊 𝕵𝖚𝖘𝖙 𝕰𝖓𝖙𝖊𝖗𝖊𝖉: 𝕿𝖍𝖊 𝕮𝖔𝖉𝖊𝖛𝖊𝖗𝖘𝖊 𝖔𝖋 𝕾𝖗𝖎𝖏𝖆𝖓 𝕽𝖔𝖞</p>
+      <p class="splash-text line-2">𝓓𝓮𝓼𝓲𝓰𝓷𝓮𝓭, 𝓓𝓮𝓿𝓮𝓵𝓸𝓹𝓮𝓭 & 𝓓𝓮𝓹𝓵𝓸𝔂𝓮𝓭 𝔀𝓲𝓽𝓱 𝓟𝓻𝓮𝓬𝓲𝓼𝓲𝓸𝓷</p>
+      <p class="splash-text line-3">𝐀𝐥𝐥 𝐑𝐢𝐠𝐡𝐭𝐬 𝐑𝐞𝐬𝐞𝐫𝐯𝐞𝐝</p>
     </div>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+</div>
+
+<!-- js part -->
+ <script>
+  // Configuration - Set these variables in your main CSS to match portfolio
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get computed style from body to adapt to portfolio
+    const bodyStyles = window.getComputedStyle(document.body);
+    
+    // Set CSS variables based on portfolio design
+    document.documentElement.style.setProperty(
+      '--splash-bg', 
+      bodyStyles.getPropertyValue('--portfolio-bg') || 
+      'linear-gradient(135deg, #0f2027, #203a43, #2c5364)'
+    );
+    
+    // Adjust other variables similarly...
+    
+    // Auto-close after progress completes
+    setTimeout(() => {
+      document.getElementById('splash-screen').style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('splash-screen').style.display = 'none';
+      }, 500);
+    }, 2500);
+  });
+</script>
+
+
+
+
+
+
+
     <!-- Navigation -->
-    <nav class="navbar">
+<nav class="navbar">
+    <div class="nav-container">
         <div class="left-nav">
-            <b>𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐦𝐲 𝐏𝐨𝐫𝐭𝐟𝐨𝐥𝐢𝐨😊....</b>
+            <span class="welcome-text">𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐦𝐲 𝐏𝐨𝐫𝐭𝐟𝐨𝐥𝐢𝐨 <span class="emoji">😊</span></span>
         </div>
         <div class="right-nav">
-            <ul id="side-menu">
-                <li><a href="#home"><strong>𝐇𝐨𝐦𝐞</strong></a></li>
-                <li><a href="#about"><strong>𝐀𝐛𝐨𝐮𝐭</strong></a></li>
-                <li><a href="#skills"><strong>𝐒𝐤𝐢𝐥𝐥𝐬</strong></a></li>
-                <li><a href="#projects"><strong>𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬</strong></a></li>
-                <li><a href="#contact"><strong>𝐂𝐨𝐧𝐭𝐚𝐜𝐭</strong></a></li>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link"><span>𝐇𝐨𝐦𝐞</span></a></li>
+                <li><a href="#about" class="nav-link"><span>𝐀𝐛𝐨𝐮𝐭</span></a></li>
+                <li><a href="#skills" class="nav-link"><span>𝐒𝐤𝐢𝐥𝐥𝐬</span></a></li>
+                <li><a href="#projects" class="nav-link"><span>𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬</span></a></li>
+                <li><a href="#contact" class="nav-link"><span>𝐂𝐨𝐧𝐭𝐚𝐜𝐭</span></a></li>
             </ul>    
         </div>
-    </nav>
+    </div>
+</nav>
+
+<style>
+    /* Modern styling for the navbar */
+    .navbar {
+        background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+        color: white;
+        padding: 1rem 2rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .welcome-text {
+        font-size: 1.2rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        position: relative;
+        animation: floatText 6s ease-in-out infinite;
+    }
+    
+    /* Floating text animation */
+    @keyframes floatText {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        25% {
+            transform: translateY(-5px) rotate(1deg);
+        }
+        50% {
+            transform: translateY(0) rotate(0deg);
+        }
+        75% {
+            transform: translateY(5px) rotate(-1deg);
+        }
+    }
+    
+    /* Moving gradient background */
+    .welcome-text::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        background: linear-gradient(45deg, 
+            #ff0000, #ff7300, #fffb00, #48ff00, 
+            #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        background-size: 400%;
+        z-index: -1;
+        border-radius: 10px;
+        opacity: 0;
+        animation: 
+            moveGradient 8s linear infinite,
+            fadeInOut 4s ease-in-out infinite;
+    }
+    
+    @keyframes moveGradient {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 400% 50%; }
+    }
+    
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 0.7; }
+    }
+    
+    .emoji {
+        margin-left: 0.5rem;
+        animation: 
+            bounce 0.8s ease infinite alternate,
+            shake 2s ease infinite;
+    }
+    
+    @keyframes bounce {
+        to { transform: translateY(-8px) scale(1.1); }
+    }
+    
+    @keyframes shake {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(5deg); }
+        75% { transform: rotate(-5deg); }
+    }
+    
+    .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        padding: 0.5rem 0;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-link span {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        animation: subtlePulse 4s ease infinite;
+    }
+    
+    @keyframes subtlePulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+    
+    .nav-link:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: #ffd700;
+        transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+        width: 100%;
+    }
+    
+    .nav-link:hover {
+        color: #ffd700;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .nav-container {
+            flex-direction: column;
+        }
+        
+        .left-nav {
+            margin-bottom: 1rem;
+        }
+        
+        .nav-menu {
+            gap: 1rem;
+        }
+        
+        .welcome-text {
+            font-size: 1rem;
+            animation: floatTextMobile 6s ease-in-out infinite;
+        }
+        
+        @keyframes floatTextMobile {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+    }
+</style>
     <!-- Home Section -->
     <section id="home" class="home-body">
         <div class="left-home">
@@ -93,165 +309,1639 @@
         
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="section-left">
-            <h1><strong>𝘼𝙗𝙤𝙪𝙩 ➡</strong></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Animated About Section -->
+<section id="about" class="about-section">
+  <div class="about-container">
+    <!-- Left Section - Title -->
+    <div class="section-left" data-aos="fade-right">
+      <div class="title-wrapper">
+        <h1 class="glowing-about-title">
+          <span class="sparkle">✨</span>
+          <span class="title-text">𝘼𝙗𝙤𝙪𝙩</span>
+          <span class="arrow">➡</span>
+          <span class="sparkle">✨</span>
+        </h1>
+        <div class="animated-underline"></div>
+      </div>
+    </div>
+    
+    <!-- Right Section - Content -->
+    <div class="section-right">
+      <!-- Summary Card -->
+      <div class="about-card part-one" data-aos="fade-up">
+        <div class="card-header">
+          <div class="header-icon">📝</div>
+          <h2 class="card-title">𝕊𝕦𝕞𝕞𝕒𝕣𝕪</h2>
+          <div class="animated-corner"></div>
         </div>
-        <div class="section-right">
-            <div class="part-one">
-                <h2>📝 𝙎𝙐𝙈𝙈𝘼𝙍𝙔 📝</h2>
-                <p>I am a <strong>𝘱𝘢𝘴𝘴𝘪𝘰𝘯𝘢𝘵𝘦 𝘊𝘰𝘮𝘱𝘶𝘵𝘦𝘳 𝘚𝘤𝘪𝘦𝘯𝘤𝘦 & 𝘌𝘯𝘨𝘪𝘯𝘦𝘦𝘳𝘪𝘯𝘨 𝘴𝘵𝘶𝘥𝘦𝘯𝘵 𝘢𝘵 𝘐𝘌𝘔, 𝘒𝘰𝘭𝘬𝘢𝘵𝘢</strong>, with a keen interest in Artificial Intelligence and Machine Learning development. Eager to explore the realms of 𝐀𝐈 𝐚𝐧𝐝 𝐌𝐋, I am committed to leveraging technology to drive innovation and solve complex problems.
-                  <br>
-                  <br><strong>💡 𝘼𝙧𝙚𝙖𝙨 𝙤𝙛 𝙄𝙣𝙩𝙚𝙧𝙚𝙨𝙩 💡:</strong>
-                     <br><strong><b>✅𝘈𝘳𝘵𝘪𝘧𝘪𝘤𝘪𝘢𝘭 𝘐𝘯𝘵𝘦𝘭𝘭𝘪𝘨𝘦𝘯𝘤𝘦.</b></strong>
-                     <br><strong><b>✅𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨.</b></strong>
-                     <br><strong><b>✅𝘋𝘢𝘵𝘢 𝘚𝘤𝘪𝘦𝘯𝘤𝘦.</b></strong>
-                     <br><strong><b>✅𝘕𝘢𝘵𝘶𝘳𝘢𝘭 𝘓𝘢𝘯𝘨𝘶𝘢𝘨𝘦 𝘗𝘳𝘰𝘤𝘦𝘴𝘴𝘪𝘯𝘨.</b></strong>
-                     <br><strong><b>✅𝘈𝘨𝘦𝘯𝘵𝘪𝘤 𝘈𝘐 / 𝘎𝘦𝘯 𝘈𝘐.</b></strong>
-                    <br>
-                    <br>📌 <strong>𝙋𝙊𝙎𝙄𝙏𝙄𝙊𝙉𝙎</strong> 📌: <br><strong>✅𝘔𝘦𝘮𝘣𝘦𝘳 𝘰𝘧 𝘗𝘭𝘢𝘤𝘦𝘮𝘦𝘯𝘵 𝘋𝘦𝘱𝘢𝘳𝘵𝘮𝘦𝘯𝘵 𝘊𝘰𝘮𝘮𝘶𝘯𝘪𝘵𝘺 𝘐𝘌𝘔-𝘜𝘌𝘔 𝘎𝘳𝘰𝘶𝘱.</strong>
-                        <br><strong>✅𝘐𝘯𝘥𝘶𝘴𝘵𝘳𝘺 𝘊𝘰𝘮𝘮𝘶𝘯𝘪𝘵𝘺 𝘮𝘦𝘮𝘣𝘦𝘳 𝘰𝘧 𝘐𝘌𝘔 𝘎𝘦𝘯𝘈𝘐 𝘊𝘖𝘌.</strong>
-                        <br><strong>✅𝘋𝘢𝘵𝘢 𝘈𝘯𝘢𝘭𝘺𝘴𝘵 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘛𝘦𝘤𝘩𝘴𝘥 𝘐𝘯𝘯𝘰𝘷𝘢𝘵𝘪𝘰𝘯𝘴 𝘊𝘰𝘯𝘴𝘶𝘭𝘵𝘪𝘯𝘨 𝘗𝘷𝘵 𝘓𝘪𝘮𝘪𝘵𝘦𝘥 𝘸𝘰𝘳𝘬𝘪𝘯𝘨 𝘶𝘯𝘥𝘦𝘳 𝘢 𝘱𝘳𝘰𝘫𝘦𝘤𝘵 𝘪𝘯 𝘏𝘪𝘯𝘥𝘶𝘴𝘵𝘢𝘯 𝘊𝘰𝘱𝘱𝘦𝘳 𝘓𝘪𝘮𝘪𝘵𝘦𝘥 - 𝘎𝘰𝘷𝘵 𝘰𝘧 𝘐𝘯𝘥𝘪𝘢 .</strong>
-                        <br><strong>✅𝘔𝘦𝘮𝘣𝘦𝘳 𝘰𝘧 𝘎𝘰𝘰𝘨𝘭𝘦 𝘋𝘦𝘷𝘦𝘭𝘰𝘱𝘦𝘳 𝘎𝘳𝘰𝘶𝘱,𝘐𝘌𝘔.</strong>
-                        <br><strong>✅𝘈𝘳𝘵𝘪𝘧𝘪𝘤𝘪𝘢𝘭 𝘪𝘯𝘵𝘦𝘭𝘭𝘪𝘨𝘦𝘯𝘤𝘦 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘗𝘪𝘯𝘯𝘢𝘤𝘭𝘦 𝘓𝘢𝘣𝘴.</strong> 
-                        <br><strong>✅𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘚𝘬𝘪𝘭𝘭𝘤𝘳𝘢𝘧𝘵 𝘛𝘦𝘤𝘩𝘯𝘰𝘭𝘰𝘨𝘺.</strong> 
-                        <br><strong>✅𝘔𝘦𝘮𝘣𝘦𝘳 𝘰𝘧 𝘊𝘰𝘥𝘪𝘯𝘨 𝘊𝘭𝘶𝘣 𝘐𝘯𝘥𝘪𝘢.</strong> 
-                        <br><strong>✅𝘊𝘢𝘮𝘱𝘶𝘴 𝘈𝘮𝘣𝘢𝘴𝘴𝘢𝘥𝘰𝘳 𝘧𝘰𝘳 𝘎𝘪𝘳𝘭𝘚𝘤𝘳𝘪𝘱𝘵 𝘚𝘶𝘮𝘮𝘦𝘳 𝘰𝘧 𝘊𝘰𝘥𝘦 2025.</strong> 
-                        <br><strong>✅𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘐𝘯𝘵𝘦𝘳𝘯 𝘗𝘦.</strong>
-                        <br><strong>✅𝘚𝘶𝘮𝘮𝘦𝘳 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘐𝘌𝘔 - 𝘐𝘌𝘋𝘊,𝘎𝘦𝘯𝘈𝘐 𝘊𝘖𝘌.</strong>
-                        <br><strong>✅𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘜𝘯𝘪𝘧𝘪𝘦𝘥 𝘔𝘦𝘯𝘵𝘰𝘳.</strong>
-                        <br><strong>✅𝘎𝘦𝘯𝘦𝘳𝘢𝘵𝘪𝘷𝘦 𝘈𝘐 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘗𝘳𝘰𝘥𝘪𝘨𝘺 𝘐𝘯𝘧𝘰𝘵𝘦𝘤𝘩.</strong>
-                        <br><strong>✅𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘊𝘰𝘥𝘦 𝘢𝘭𝘱𝘩𝘢.</strong>
-                        <br><strong>✅𝘗𝘺𝘵𝘩𝘰𝘯 𝘋𝘦𝘷𝘦𝘭𝘰𝘱𝘦𝘳 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘐𝘌𝘔 𝘎𝘦𝘯𝘈𝘐 𝘊𝘖𝘌.</strong>
-                        <br><strong>✅𝘗𝘺𝘵𝘩𝘰𝘯 𝘋𝘦𝘷𝘦𝘭𝘰𝘱𝘦𝘳 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘐𝘯𝘯𝘰𝘣𝘺𝘵𝘦 𝘚𝘦𝘳𝘷𝘪𝘤𝘦𝘴.</strong>
-                        <br><strong>✅𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨 𝘐𝘯𝘵𝘦𝘳𝘯 𝘢𝘵 𝘈𝘓𝘍𝘐𝘋𝘖 𝘛𝘦𝘤𝘩.</strong>
-                        <br><strong>✅𝘑𝘶𝘯𝘪𝘰𝘳 𝑅𝘦𝘴𝘦𝘢𝘳𝘤𝘩 𝘈𝘴𝘴𝘪𝘴𝘵𝘢𝘯𝘵 𝘢𝘵 𝘐𝘌𝘋𝘊 𝘓𝘢𝘣, 𝘐𝘌𝘔.</strong>
-                    </strong>
+        <div class="card-content">
+          <p class="animated-text">I am a <span class="highlight">passionate Computer Science & Engineering student at IEM, Kolkata</span>, with a keen interest in Artificial Intelligence and Machine Learning development. Eager to explore the realms of <span class="highlight">AI and ML</span>, I am committed to leveraging technology to drive innovation and solve complex problems.</p>
+          
+          <div class="interests-section">
+            <div class="tag-container">
+              <div class="interest-tag" style="--color: #3498db">
+                <span class="tag-icon">🧠</span> 𝘈𝘳𝘵𝘪𝘧𝘪𝘤𝘪𝘢𝘭 𝘐𝘯𝘵𝘦𝘭𝘭𝘪𝘨𝘦𝘯𝘤𝘦
+              </div>
+              <div class="interest-tag" style="--color: #9b59b6">
+                <span class="tag-icon">🤖</span> 𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨
+              </div>
+              <div class="interest-tag" style="--color: #2ecc71">
+                <span class="tag-icon">📊</span> 𝘋𝘢𝘵𝘢 𝘚𝘤𝘪𝘦𝘯𝘤𝘦
+              </div>
+              <div class="interest-tag" style="--color: #e74c3c">
+                <span class="tag-icon">🗣️</span> 𝘕𝘢𝘵𝘶𝘳𝘢𝘭 𝘓𝘢𝘯𝘨𝘶𝘢𝘨𝘦 𝘗𝘳𝘰𝘤𝘦𝘴𝘴𝘪𝘯𝘨
+              </div>
+              <div class="interest-tag" style="--color: #f1c40f">
+                <span class="tag-icon">🔄</span> 𝘈𝘨𝘦𝘯𝘵𝘪𝘤 𝘈𝘐 / 𝘎𝘦𝘯 𝘈𝘐
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Positions Card -->
+<div class="about-card positions-card" data-aos="fade-up" data-aos-delay="100">
+  <div class="card-header">
+    <div class="header-icon">📌</div>
+    <h2 class="card-title">ℙ𝕠𝕤𝕚𝕥𝕚𝕠𝕟𝕤</h2>
+    <div class="animated-corner"></div>
+  </div>
+  <div class="card-content">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #3498db"></div>
+        <div class="timeline-content">
+          <p>Member of Placement Department Community IEM-UEM Group.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #9b59b6"></div>
+        <div class="timeline-content">
+          <p>Industry Community member of IEM GenAI COE.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #2ecc71"></div>
+        <div class="timeline-content">
+          <p>Data Analyst Intern at Techsd Innovations Consulting Pvt Limited working under a project in Hindustan Copper Limited - Govt of India</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #e74c3c"></div>
+        <div class="timeline-content">
+          <p>Member of Google Developer Group, IEM.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #f1c40f"></div>
+        <div class="timeline-content">
+          <p>Artificial Intelligence Intern at Pinnacle Labs.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #1abc9c"></div>
+        <div class="timeline-content">
+          <p>machine Learning Intern at Skillcraft Technology.</p>
+        </div>
+        </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #1abc9c"></div>
+        <div class="timeline-content">
+          <p>Member of Coding Club India.</p>
+        </div></div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #1abc9c"></div>
+        <div class="timeline-content">
+          <p>Campus Ambassador for GirlScript Summer of Code 2025.</p>
+        </div></div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #1abc9c"></div>
+        <div class="timeline-content">
+          <p>Machine Learning intern at Internpe.</p>
+        </div></div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #1abc9c"></div>
+        <div class="timeline-content">
+          <p>Summer Intern at IEM-IEDC,GenAI COE.</p>
+        </div></div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #1abc9c"></div>
+        <div class="timeline-content">
+          <p>Machine Learning intern at Unified Mentor.</p>
+        </div></div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #1abc9c"></div>
+        <div class="timeline-content">
+          <p>Generative AI Intern at Prodigy Infotech.</p>
+        </div>
+        </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #e74c3c"></div>
+        <div class="timeline-content">
+          <p>Python Developer Intern at InternCertify.</p>
+        </div></div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #e74c3c"></div>
+        <div class="timeline-content">
+          <p>Python Developer Intern at Innobyte Services.</p>
+        </div></div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #e74c3c"></div>
+        <div class="timeline-content">
+          <p>Machine Learning Intern at ALFIDO Tech.</p>
+        </div>
+        </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #e74c3c"></div>
+        <div class="timeline-content">
+          <p>Junior Research Assistant at IEDC Lab,IEM.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #8e44ad"></div>
+        <div class="timeline-content">
+          <p>Machine Learning intern at Code Alpha.</p>
+        </div>
+      </div>
+      <!-- Add more if needed -->
+    </div>
+  </div>
+</div>
+
+      
+      <!-- Achievements Card -->
+      <div class="about-card achievements-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-header">
+          <div class="header-icon">🏆</div>
+          <h2 class="card-title">𝔸𝕔𝕙𝕚𝕖𝕧𝕖𝕞𝕖𝕟𝕥𝕤</h2>
+          <div class="animated-corner"></div>
+        </div>
+        <div class="card-content">
+          <ul class="achievements-list">
+            <li class="achievement-item">
+              <div class="achievement-icon">🌍</div>
+              <p>Attended Study Abroad Program at <span class="highlight">National University Of Singapore (NUS)</span></p>
+            </li>
+            <li class="achievement-item">
+              <div class="achievement-icon">📜</div>
+              <p>Achieved Certifications in <span class="highlight">AI/ML, CyberSecurity, DataScience</span> from Coursera, LinkedIn Learning, Deloitte</p>
+            </li>
+            <li class="achievement-item">
+              <div class="achievement-icon">💻</div>
+              <p>Solved <span class="highlight">DSA problems</span> on platforms like <span class="highlight">LeetCode, HackerRank</span></p>
+            </li>
+            <li class="achievement-item">
+              <div class="achievement-icon">🔬</div>
+              <p>Completed <span class="highlight">Internships</span> in <span class="highlight">AI, Machine Learning and Python Development</span></p>
+            </li>
+          </ul>
+          <a href="srijan_current resume 2025 IEM...pdf" target="_blank" class="cv-button">
+            <span class="button-icon">👀</span>
+            <span class="button-text">𝕍𝕚𝕖𝕨 ℝ𝕖𝕤𝕦𝕞𝕖</span>
+            <span class="button-hover-effect"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Floating elements for decoration -->
+  <div class="floating-shapes">
+    <div class="shape triangle" style="--delay: 0s; --x: 10%; --y: 20%; --size: 15px;"></div>
+    <div class="shape circle" style="--delay: 1s; --x: 85%; --y: 30%; --size: 20px;"></div>
+    <div class="shape square" style="--delay: 2s; --x: 30%; --y: 70%; --size: 12px;"></div>
+    <div class="shape hexagon" style="--delay: 3s; --x: 70%; --y: 80%; --size: 18px;"></div>
+  </div>
+</section>
+
+<style>
+/* About Section Styles */
+.about-section {
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+/* Left Section */
+.section-left {
+  flex: 0 0 200px;
+  position: relative;
+}
+
+.title-wrapper {
+  position: sticky;
+  top: 2rem;
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.glowing-about-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.sparkle {
+  animation: sparkle 2s infinite;
+  opacity: 0.7;
+}
+
+.arrow {
+  color: #3498db;
+  animation: bounce 1s infinite alternate;
+}
+
+.title-text {
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.animated-underline {
+  height: 4px;
+  width: 100px;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  margin-left: auto;
+  border-radius: 2px;
+  animation: underlinePulse 3s infinite;
+}
+
+/* Right Section */
+.section-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* About Cards */
+.about-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.header-icon {
+  font-size: 1.5rem;
+  animation: float 3s infinite ease-in-out;
+}
+
+.card-title {
+  margin: 0;
+  color: white;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.animated-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 100%;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.3), rgba(155, 89, 182, 0.3));
+  animation: cornerPulse 4s infinite;
+}
+
+/* Card Content */
+.card-content {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #3498db;
+  font-weight: 600;
+}
+
+/* Interests Tags */
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.interest-tag {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.interest-tag:hover {
+  background: var(--color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tag-icon {
+  font-size: 1rem;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #3498db, #9b59b6);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.5rem;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--dot-color);
+  border: 3px solid white;
+}
+
+.timeline-content {
+  padding-left: 1rem;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Achievements List */
+.achievements-list {
+  list-style: none;
+  padding: 0;
+}
+
+.achievement-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+.achievement-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* CV Button */
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cv-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cv-button .button-hover-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.cv-button:hover .button-hover-effect {
+  left: 100%;
+}
+
+/* Floating Shapes */
+.floating-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.1;
+  animation: float 8s infinite ease-in-out;
+  animation-delay: var(--delay);
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: linear-gradient(135deg, #3498db, #9b59b6);
+}
+
+.triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  border-radius: 5px;
+}
+
+.hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* Animations */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes bounce {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes underlinePulse {
+  0%, 100% { transform: scaleX(1); opacity: 1; }
+  50% { transform: scaleX(1.2); opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(5px, -5px); }
+  50% { transform: translate(-5px, 5px); }
+  75% { transform: translate(3px, 3px); }
+}
+
+@keyframes cornerPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+  }
+  
+  .section-left {
+    flex: 1;
+    margin-bottom: 2rem;
+  }
+  
+  .title-wrapper {
+    position: static;
+    text-align: center;
+    padding-right: 0;
+  }
+  
+  .animated-underline {
+    margin: 0 auto 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tag-container {
+    justify-content: center;
+  }
+  
+  .card-title {
+    font-size: 1.3rem;
+  }
+  
+  .glowing-about-title {
+    font-size: 2rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Animate elements when they come into view
+  const animateOnScroll = function() {
+    const cards = document.querySelectorAll('.about-card');
+    
+    cards.forEach(card => {
+      const cardPosition = card.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 1.3;
+      
+      if (cardPosition < screenPosition) {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }
+    });
+  };
+  
+  // Set initial state for animation
+  const cards = document.querySelectorAll('.about-card');
+  cards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'all 0.6s ease';
+  });
+  
+  window.addEventListener('scroll', animateOnScroll);
+  animateOnScroll(); // Run once on load
+  
+  // Add hover effect to interest tags
+  const tags = document.querySelectorAll('.interest-tag');
+  tags.forEach(tag => {
+    tag.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-3px)';
+      this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+    });
+    
+    tag.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+      this.style.boxShadow = 'none';
+    });
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+<!-- Animated Skills Section -->
+<section id="skills" class="skills-section">
+  <div class="section-header">
+    <h1 class="glowing-title">
+      <span class="tool-icon">🛠️</span>
+      <span class="brain-icon">🧠</span>
+      <span class="title-text">𝙎𝙆𝙄𝙇𝙇𝙎</span>
+      <span class="brain-icon">🧠</span>
+      <span class="tool-icon">🛠️</span>
+    </h1>
+    <div class="animated-underline"></div>
+  </div>
+  
+  <div class="skills-container">
+    <!-- Coursework Skills -->
+    <div class="skills-category" data-aos="fade-up">
+      <div class="category-header">
+        <div class="category-icon">📚</div>
+        <h2>𝘾𝙊𝙐𝙍𝙎𝙀𝙒𝙊𝙍𝙆 𝙎𝙆𝙄𝙇𝙇𝙎</h2>
+      </div>
+      <div class="skills-grid">
+        <!-- Skill 1 -->
+        <div class="circular-progress" data-percent="90">
+          <div class="circle-progress">
+            <svg class="circle-chart" viewBox="0 0 36 36">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle-fill" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <div class="circle-info">
+              <div class="skill-name">Data Structures & Algorithms</div>
+              <div class="skill-percent">90%</div>
+            </div>
+          </div>
+        </div>
         
-            <div class="part-two">
-                <h2>🏆 <strong>𝘼𝘾𝙃𝙄𝙀𝙑𝙀𝙈𝙀𝙉𝙏𝙎</strong> 🏆</h2>
-                <ul>
-                    <li><p>✅Attended Study Abroad Program at <strong>𝙉𝙖𝙩𝙞𝙤𝙣𝙖𝙡 𝙐𝙣𝙞𝙫𝙚𝙧𝙨𝙞𝙩𝙮 𝙊𝙛 𝙎𝙞𝙣𝙜𝙖𝙥𝙤𝙧𝙚 (𝙉𝙐𝙎)</strong> </p></li>
-                    <li><p>✅Achieved Certifications based on <strong>𝘼𝙄/𝙈𝙇,𝘾𝙮𝙗𝙚𝙧𝙎𝙚𝙘𝙪𝙧𝙞𝙩𝙮,𝘿𝙖𝙩𝙖𝙎𝙘𝙞𝙚𝙣𝙘𝙚 𝙁𝙧𝙤𝙢 𝘾𝙤𝙪𝙧𝙨𝙚𝙧𝙖,𝙇𝙞𝙣𝙠𝙚𝙙𝙡𝙣 𝙇𝙚𝙖𝙧𝙣𝙞𝙣𝙜,𝘿𝙚𝙡𝙤𝙞𝙩𝙩𝙚</strong></p></li>
-                    <li><p>✅Solved <strong>DSA problems</strong> on platforms like<strong>𝙇𝙚𝙚𝙩𝘾𝙤𝙙𝙚, 𝙃𝙖𝙘𝙠𝙚𝙧𝙍𝙖𝙣𝙠.</strong> </p></li>
-                    <li><p>✅Completed <strong>Internships</strong> on <strong>𝘼𝙧𝙩𝙞𝙛𝙞𝙘𝙞𝙖𝙡 𝙞𝙣𝙩𝙚𝙡𝙡𝙞𝙜𝙚𝙣𝙘𝙚,𝙈𝙖𝙘𝙝𝙞𝙣𝙚 𝙇𝙚𝙖𝙧𝙣𝙞𝙣𝙜 𝙖𝙣𝙙 𝙋𝙮𝙩𝙝𝙤𝙣 𝘿𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧</strong></p></li>
-                </ul>
-                <!-- <a href="Srijan Roy Resume.pdf" download="srijan Roy Resume.pdf" class="cv-button">Download CV</a> -->
-                <a href="srijan_current resume 2025 IEM...pdf" target="_blank" class="cv-button"><strong>👀 𝕍𝕚𝕖𝕨 ℝ𝕖𝕤𝕦𝕞𝕖</strong></a>
+        <!-- Skill 2 -->
+        <div class="circular-progress" data-percent="85">
+          <div class="circle-progress">
+            <svg class="circle-chart" viewBox="0 0 36 36">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle-fill" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <div class="circle-info">
+              <div class="skill-name">OOP</div>
+              <div class="skill-percent">85%</div>
             </div>
+          </div>
         </div>
-    </section>
-
-   <!-- Skills Section -->
-<section id="skills" class="skill">
-    <h1>🛠️🧠 <strong>𝙎𝙆𝙄𝙇𝙇𝙎</strong> 🛠️🧠</h1>
-    <div class="skill-container">
-        <div class="skill-box">
-            <h2><strong>🧑‍🏫 𝘾𝙊𝙐𝙍𝙎𝙀𝙒𝙊𝙍𝙆 🧑‍🏫</strong></h2>
-            <ul>
-                <li>
-                    <div class="skill-item">
-                        <span class="skill-name">🟢𝘋𝘢𝘵𝘢 𝘚𝘵𝘳𝘶𝘤𝘵𝘶𝘳𝘦𝘴 & 𝘈𝘭𝘨𝘰𝘳𝘪𝘵𝘩𝘮𝘴</span>
-                        <span class="skill-percentage">90%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
-                </li>
-                <li>
-                    <div class="skill-item">
-                        <span class="skill-name">🟢𝘖𝘣𝘫𝘦𝘤𝘵-𝘖𝘳𝘪𝘦𝘯𝘵𝘦𝘥 𝘗𝘳𝘰𝘨𝘳𝘢𝘮𝘮𝘪𝘯𝘨</span>
-                        <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
-                </li>
-                <li>
-                    <div class="skill-item">
-                        <span class="skill-name">🟢𝘔𝘢𝘤𝘩𝘪𝘯𝘦 𝘓𝘦𝘢𝘳𝘯𝘪𝘯𝘨</span>
-                        <span class="skill-percentage">90%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
-                </li>
-                <li>
-                    <div class="skill-item">
-                        <span class="skill-name">🟢𝘈𝘳𝘵𝘪𝘧𝘪𝘤𝘪𝘢𝘭 𝘐𝘯𝘵𝘦𝘭𝘭𝘪𝘨𝘦𝘯𝘤𝘦</span>
-                        <span class="skill-percentage">80%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
-                </li>
-                <li>
-                    <div class="skill-item">
-                        <span class="skill-name">🟢𝘕𝘢𝘵𝘶𝘳𝘢𝘭 𝘓𝘢𝘯𝘨𝘶𝘢𝘨𝘦 𝘗𝘳𝘰𝘤𝘦𝘴𝘴𝘪𝘯𝘨</span>
-                        <span class="skill-percentage">75%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div>
-                </li>
-                <li>
-                    <div class="skill-item">
-                        <span class="skill-name">🟢𝘋𝘢𝘵𝘢𝘣𝘢𝘴𝘦 𝘔𝘢𝘯𝘢𝘨𝘦𝘮𝘦𝘯𝘵 𝘚𝘺𝘴𝘵𝘦𝘮</span>
-                        <span class="skill-percentage">88%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 88%;"></div></div>
-                </li>
-            </ul>
+        
+        <!-- Skill 3 -->
+        <div class="circular-progress" data-percent="90">
+          <div class="circle-progress">
+            <svg class="circle-chart" viewBox="0 0 36 36">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle-fill" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <div class="circle-info">
+              <div class="skill-name">Machine Learning</div>
+              <div class="skill-percent">90%</div>
+            </div>
+          </div>
         </div>
-        <div class="skill-box">
-            <h2><strong>🟡𝙋𝙍𝙊𝙂𝙍𝘼𝙈𝙈𝙄𝙉𝙂 𝙎𝙆𝙄𝙇𝙇𝙎🟡</strong></h2>
-            <ul>
-                <li>
-                    <div class="skill-item">
-                        <span class="skill-name">🟢𝘱𝘺𝘵𝘩𝘰𝘯</span>
-                        <span class="skill-percentage">95%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 95%;"></div></div>
-                </li>
-                <li>
-                    <div class="skill-item">
-                        <span class="skill-name">🟢𝘑𝘢𝘷𝘢</span>
-                        <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
-                </li>
-                <li>
-                    <div class="skill-item">
-                        <span class="skill-name">🟢𝘊-𝘓𝘢𝘯𝘨𝘶𝘢𝘨𝘦</span>
-                        <span class="skill-percentage">90%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
-                </li>
-                <li>
-                    <div class="skill-item">
-                        <span class="skill-name">🟢𝘔𝘓</span>
-                        <span class="skill-percentage">90%</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
-                </li>
-            </ul>
+        
+        <!-- Skill 4 -->
+        <div class="circular-progress" data-percent="80">
+          <div class="circle-progress">
+            <svg class="circle-chart" viewBox="0 0 36 36">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle-fill" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <div class="circle-info">
+              <div class="skill-name">AI</div>
+              <div class="skill-percent">80%</div>
+            </div>
+          </div>
         </div>
+        
+        <!-- Skill 5 -->
+        <div class="circular-progress" data-percent="75">
+          <div class="circle-progress">
+            <svg class="circle-chart" viewBox="0 0 36 36">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle-fill" stroke-dasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <div class="circle-info">
+              <div class="skill-name">NLP</div>
+              <div class="skill-percent">75%</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skill 6 -->
+        <div class="circular-progress" data-percent="88">
+          <div class="circle-progress">
+            <svg class="circle-chart" viewBox="0 0 36 36">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle-fill" stroke-dasharray="88, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <div class="circle-info">
+              <div class="skill-name">DBMS</div>
+              <div class="skill-percent">88%</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    
+    <!-- Programming Skills -->
+    <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+      <div class="category-header">
+        <div class="category-icon">💻</div>
+        <h2>𝙋𝙍𝙊𝙂𝙍𝘼𝙈𝙈𝙄𝙉𝙂 𝙎𝙆𝙄𝙇𝙇𝙎</h2>
+      </div>
+      <div class="skills-grid">
+        <!-- Skill 1 -->
+        <div class="circular-progress" data-percent="95">
+          <div class="circle-progress">
+            <svg class="circle-chart" viewBox="0 0 36 36">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle-fill" stroke-dasharray="95, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <div class="circle-info">
+              <div class="skill-name">Python</div>
+              <div class="skill-percent">95%</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skill 2 -->
+        <div class="circular-progress" data-percent="85">
+          <div class="circle-progress">
+            <svg class="circle-chart" viewBox="0 0 36 36">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle-fill" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <div class="circle-info">
+              <div class="skill-name">Java</div>
+              <div class="skill-percent">85%</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skill 3 -->
+        <div class="circular-progress" data-percent="90">
+          <div class="circle-progress">
+            <svg class="circle-chart" viewBox="0 0 36 36">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle-fill" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <div class="circle-info">
+              <div class="skill-name">C</div>
+              <div class="skill-percent">90%</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skill 4 -->
+        <div class="circular-progress" data-percent="90">
+          <div class="circle-progress">
+            <svg class="circle-chart" viewBox="0 0 36 36">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="circle-fill" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <div class="circle-info">
+              <div class="skill-name">ML</div>
+              <div class="skill-percent">90%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="floating-icons">
+    <div class="floating-icon" style="--delay: 0s; --x: 10%; --y: 20%;">👨‍💻</div>
+    <div class="floating-icon" style="--delay: 1s; --x: 80%; --y: 30%;">📊</div>
+    <div class="floating-icon" style="--delay: 2s; --x: 30%; --y: 70%;">🧮</div>
+    <div class="floating-icon" style="--delay: 3s; --x: 70%; --y: 80%;">🔍</div>
+  </div>
 </section>
-<!-- Internships Section -->
-<section id="internships" class="internship-section">
-    <div class="internship-wrapper">
-        <!-- Left Part: Header -->
+
+<style>
+/* Skills Section */
+.skills-section {
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.glowing-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.tool-icon, .brain-icon {
+  animation: bounce 2s infinite;
+}
+
+.brain-icon {
+  animation-delay: 0.3s;
+}
+
+.title-text {
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.animated-underline {
+  height: 4px;
+  width: 100px;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  margin: 1rem auto;
+  border-radius: 2px;
+  animation: underlinePulse 3s infinite;
+}
+
+/* Skills Container */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Skills Category */
+.skills-category {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skills-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.category-icon {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: iconPulse 2s infinite;
+}
+
+.skills-category h2 {
+  margin: 0;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 2rem;
+}
+
+/* Circular Progress */
+.circular-progress {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.circle-progress {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.circle-chart {
+  width: 100%;
+  height: 100%;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 3;
+}
+
+.circle-fill {
+  fill: none;
+  stroke: url(#gradient);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  animation: circleFill 1.5s ease-in-out forwards;
+}
+
+.circle-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.skill-name {
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.skill-percent {
+  color: #3498db;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Floating Icons */
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-icon {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.2;
+  animation: float 6s infinite ease-in-out;
+  animation-delay: var(--delay);
+  left: var(--x);
+  top: var(--y);
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes underlinePulse {
+  0%, 100% { transform: scaleX(1); opacity: 1; }
+  50% { transform: scaleX(1.2); opacity: 0.8; }
+}
+
+@keyframes circleFill {
+  from { stroke-dasharray: 0, 100; }
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -10px) rotate(5deg); }
+  50% { transform: translate(-10px, 10px) rotate(-5deg); }
+  75% { transform: translate(5px, 5px) rotate(3deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .circular-progress {
+    height: 120px;
+    width: 120px;
+  }
+  
+  .skills-category {
+    padding: 1.5rem;
+  }
+  
+  .glowing-title {
+    font-size: 2rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Animate circular progress bars on scroll
+  const progressCircles = document.querySelectorAll('.circle-fill');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const percent = entry.target.parentElement.parentElement.getAttribute('data-percent');
+        entry.target.style.strokeDasharray = `${percent}, 100`;
+      }
+    });
+  }, {threshold: 0.5});
+  
+  progressCircles.forEach(circle => {
+    observer.observe(circle);
+  });
+  
+  // Add gradient to each circle
+  const circularProgresses = document.querySelectorAll('.circular-progress');
+  
+  circularProgresses.forEach(progress => {
+    const svg = progress.querySelector('svg');
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+    gradient.setAttribute('id', 'gradient');
+    gradient.setAttribute('x1', '0%');
+    gradient.setAttribute('y1', '0%');
+    gradient.setAttribute('x2', '100%');
+    gradient.setAttribute('y2', '100%');
+    
+    const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    stop1.setAttribute('offset', '0%');
+    stop1.setAttribute('stop-color', '#3498db');
+    
+    const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    stop2.setAttribute('offset', '100%');
+    stop2.setAttribute('stop-color', '#9b59b6');
+    
+    gradient.appendChild(stop1);
+    gradient.appendChild(stop2);
+    defs.appendChild(gradient);
+    svg.appendChild(defs);
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Animated Internships Section -->
+<section id="internships" class="glassmorphism-section">
+  <div class="section-header">
+    <h1 class="glowing-title">
+      <span class="handshake-icon">🤝</span>
+      <span class="title-text">𝙄𝙉𝙏𝙀𝙍𝙉𝙎𝙃𝙄𝙋𝙎</span>
+      <span class="handshake-icon">🤝</span>
+    </h1>
+    <div class="animated-underline"></div>
+  </div>
+  
+  <div class="internship-timeline">
+    <!-- Internship 1 -->
+    <div class="internship-card" data-aos="fade-up">
+      <div class="internship-logo-container">
+        <img src="code alpha logo.jpeg" alt="Code Alpha Logo" class="company-logo">
+        <div class="logo-halo"></div>
+      </div>
+      <div class="internship-details">
         <div class="internship-header">
-            <h1>🤝𝙄𝙉𝙏𝙀𝙍𝙉𝙎𝙃𝙄𝙋𝙎🤝</h1>
+          <h3 class="company-name">CodeAlpha</h3>
+          <span class="duration-badge">1 Month</span>
         </div>
-
-        <!-- Right Part: Internship List -->
-        <div class="internship-container">
-            <ul>
-                <li><><p><img src="code alpha logo.jpeg" alt="logo" id="logo">✅Completion of 1 month internship at <strong>𝘊𝘰𝘥𝘦𝘈𝘭𝘱𝘩𝘢</strong> on <strong>Machine Learning.</strong><a href="code alpha certificate .pdf"><button><strong>👀 𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></button></a></p></li>
-                <li><img src="unified mentor logo.png" alt="logo" id="logo"><p>✅Completion of 1 month internship at <strong>𝘜𝘯𝘪𝘧𝘪𝘦𝘥 𝘔𝘦𝘯𝘵𝘰𝘳</strong> on <strong>Machine Learning.</strong><a href="unified mentor internship certificate.pdf"><button><strong>👀 𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></button></a></p></li>
-                <li><img src="internpe logo1.jpeg" alt="logo" id="logo"><p>✅Completion of 1 month internship at <strong>𝘐𝘯𝘵𝘦𝘳𝘯 𝘱𝘦</strong> as <strong>Artificiall intelligence & Machine Learning.</strong><a href="internpe internship certificate.pdf"><button><strong>👀 𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></button></a></p></li>
-                <li><img src="intern certify logo.jpeg" alt="logo" id="logo"><p>✅Completion of 1 month internship at <strong>𝘐𝘯𝘵𝘦𝘳𝘯 𝘊𝘦𝘳𝘵𝘪𝘧𝘺</strong> as <strong>Python Developer.</strong><a href="Interncertify.pdf"><button><strong>👀 𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></button></a></p></li>
-                <li><img src="prodigy infotech logo.png" alt="logo" id="logo"><p>✅Completion of 1 month internship at <strong>𝘗𝘳𝘰𝘥𝘪𝘨𝘺 𝘐𝘯𝘧𝘰𝘵𝘦𝘤𝘩</strong> on <strong>Generative AI.</strong><a href="prodigy infotech certificate.pdf    "><button><strong>👀 𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></button></a></p></li>
-                <li><img src="alfido tech logo.png" alt="logo" id="logo"><p>✅Completion of 1 month internship at <strong>𝘈𝘭𝘧𝘪𝘥𝘰 𝘛𝘦𝘤𝘩</strong> on <strong>Generative AI.</strong><a href="Srijan Roy ALFIDO internship CERTIFICATE.pdf    "><button><strong>👀 𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></button></a></p></li>
-            </ul>
-            </ul>
+        <p class="internship-role">Machine Learning Intern</p>
+        <div class="internship-achievements">
+          <span class="achievement-badge">✅ Completed</span>
         </div>
+        <a href="code alpha certificate .pdf" target="_blank" class="view-cert-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+          <span class="hover-effect"></span>
+        </a>
+      </div>
     </div>
+
+    <!-- Internship 2 -->
+    <div class="internship-card" data-aos="fade-up" data-aos-delay="50">
+      <div class="internship-logo-container">
+        <img src="unified mentor logo.png" alt="Unified Mentor Logo" class="company-logo">
+        <div class="logo-halo"></div>
+      </div>
+      <div class="internship-details">
+        <div class="internship-header">
+          <h3 class="company-name">Unified Mentor</h3>
+          <span class="duration-badge">1 Month</span>
+        </div>
+        <p class="internship-role">Machine Learning Intern</p>
+        <div class="internship-achievements">
+          <span class="achievement-badge">✅ Completed</span>
+        </div>
+        <a href="unified mentor internship certificate.pdf" target="_blank" class="view-cert-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+          <span class="hover-effect"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Internship 3 -->
+    <div class="internship-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="internship-logo-container">
+        <img src="internpe logo1.jpeg" alt="InternPe Logo" class="company-logo">
+        <div class="logo-halo"></div>
+      </div>
+      <div class="internship-details">
+        <div class="internship-header">
+          <h3 class="company-name">InternPe</h3>
+          <span class="duration-badge">1 Month</span>
+        </div>
+        <p class="internship-role">AI & ML Intern</p>
+        <div class="internship-achievements">
+          <span class="achievement-badge">✅ Completed</span>
+        </div>
+        <a href="internpe internship certificate.pdf" target="_blank" class="view-cert-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+          <span class="hover-effect"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Internship 4 -->
+    <div class="internship-card" data-aos="fade-up" data-aos-delay="150">
+      <div class="internship-logo-container">
+        <img src="intern certify logo.jpeg" alt="Intern Certify Logo" class="company-logo">
+        <div class="logo-halo"></div>
+      </div>
+      <div class="internship-details">
+        <div class="internship-header">
+          <h3 class="company-name">InternCertify</h3>
+          <span class="duration-badge">1 Month</span>
+        </div>
+        <p class="internship-role">Python Developer</p>
+        <div class="internship-achievements">
+          <span class="achievement-badge">✅ Completed</span>
+        </div>
+        <a href="Interncertify.pdf" target="_blank" class="view-cert-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+          <span class="hover-effect"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Internship 5 -->
+    <div class="internship-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="internship-logo-container">
+        <img src="prodigy infotech logo.png" alt="Prodigy Infotech Logo" class="company-logo">
+        <div class="logo-halo"></div>
+      </div>
+      <div class="internship-details">
+        <div class="internship-header">
+          <h3 class="company-name">Prodigy Infotech</h3>
+          <span class="duration-badge">1 Month</span>
+        </div>
+        <p class="internship-role">Generative AI Intern</p>
+        <div class="internship-achievements">
+          <span class="achievement-badge">✅ Completed</span>
+        </div>
+        <a href="prodigy infotech certificate.pdf" target="_blank" class="view-cert-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+          <span class="hover-effect"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Internship 6 -->
+    <div class="internship-card" data-aos="fade-up" data-aos-delay="250">
+      <div class="internship-logo-container">
+        <img src="alfido tech logo.png" alt="Alfido Tech Logo" class="company-logo">
+        <div class="logo-halo"></div>
+      </div>
+      <div class="internship-details">
+        <div class="internship-header">
+          <h3 class="company-name">Alfido Tech</h3>
+          <span class="duration-badge">1 Month</span>
+        </div>
+        <p class="internship-role">Generative AI Intern</p>
+        <div class="internship-achievements">
+          <span class="achievement-badge">✅ Completed</span>
+        </div>
+        <a href="Srijan Roy ALFIDO internship CERTIFICATE.pdf" target="_blank" class="view-cert-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+          <span class="hover-effect"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator">
+    <span class="scroll-dot"></span>
+    <span class="scroll-dot"></span>
+    <span class="scroll-dot"></span>
+  </div>
 </section>
+
+<style>
+/* Internships Section - Glassmorphism Style */
+.glassmorphism-section {
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  margin: 2rem auto;
+  max-width: 1200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.glassmorphism-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  animation: gradientRotate 15s linear infinite;
+  z-index: -1;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.glowing-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.handshake-icon {
+  animation: bounce 2s infinite;
+}
+
+.title-text {
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.animated-underline {
+  height: 3px;
+  width: 100px;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.8), rgba(255,255,255,0));
+  margin: 1rem auto;
+  border-radius: 3px;
+  animation: underlineFlow 3s infinite linear;
+}
+
+/* Internship Timeline */
+.internship-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* Internship Card */
+.internship-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.internship-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(to bottom, #3498db, #9b59b6);
+  transition: height 0.6s ease;
+}
+
+.internship-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.internship-card:hover::before {
+  height: 100%;
+}
+
+.internship-logo-container {
+  position: relative;
+  min-width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-logo {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+  transition: all 0.5s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.logo-halo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  animation: pulseHalo 3s infinite;
+}
+
+.internship-card:hover .company-logo {
+  filter: brightness(1) invert(0) drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+  transform: scale(1.1);
+}
+
+.internship-details {
+  flex: 1;
+}
+
+.internship-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.company-name {
+  font-size: 1.3rem;
+  color: white;
+  margin: 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.duration-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+}
+
+.internship-role {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.internship-achievements {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.8rem 0;
+}
+
+.achievement-badge {
+  background: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* View Certificate Button */
+.view-cert-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  margin-top: 0.5rem;
+}
+
+.view-cert-btn .hover-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  top: 0;
+  left: -100%;
+  transition: 0.5s;
+}
+
+.view-cert-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.view-cert-btn:hover .hover-effect {
+  left: 100%;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+
+.scroll-dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: dotPulse 1.5s infinite ease-in-out;
+}
+
+.scroll-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.scroll-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Animations */
+@keyframes gradientRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes underlineFlow {
+  0% { background-position: -100px 0; }
+  100% { background-position: 100px 0; }
+}
+
+@keyframes pulseHalo {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 0.4; }
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .internship-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+  
+  .internship-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .glowing-title {
+    font-size: 2rem;
+  }
+  
+  .glassmorphism-section {
+    padding: 2rem 1rem;
+    margin: 1rem;
+    border-radius: 15px;
+  }
+  
+  .internship-card::before {
+    width: 100%;
+    height: 4px;
+    transition: width 0.6s ease;
+  }
+  
+  .internship-card:hover::before {
+    width: 100%;
+    height: 4px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Add tilt effect to internship cards
+  const cards = document.querySelectorAll('.internship-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const angleX = (y - centerY) / 20;
+      const angleY = (centerX - x) / 20;
+      
+      card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-5px)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+    });
+  });
+  
+  // Add scroll animation for cards
+  const observerOptions = {
+    threshold: 0.1
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+  
+  document.querySelectorAll('.internship-card').forEach(card => {
+    card.style.opacity = 0;
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+  });
+});
+</script>
+
+
+
 
 
             
@@ -453,6 +2143,28 @@
              </p>
               <a href="https://github.com/SrijanRoy12/skill-spark-suite" target="_blank"><strong>👀 View Project</strong></a>
         </div>
+
+
+        <div class="project">
+            <h2>💸 𝓢𝓪𝓵𝓪𝓻𝔂 𝓜𝓪𝓷𝓪𝓰𝓮𝓶𝓮𝓷𝓽 𝓟𝓻𝓮𝓭𝓲𝓬𝓽𝓲𝓸𝓷 𝓢𝔂𝓼𝓽𝓮𝓶 𝓐𝓹𝓹 📈</h2>
+             <p><strong>Description:</strong> This is an AI-driven <b>Salary Management and Prediction System</b> built to help companies streamline compensation planning, analyze salary trends, and predict future payroll needs. Powered by data analytics and machine learning, the platform offers interactive dashboards, employee-level insights, and salary benchmarking based on roles, experience, and market standards.</p>
+             <p><strong>Tools & Technologies:</strong> 
+             <br>
+             <b>Frontend:</b> React.js with Tailwind CSS and ShadCN UI for clean interfaces, chart components, and responsive data visualizations.
+             <br>
+             <b>Backend:</b> Node.js/Express with RESTful APIs, MongoDB for employee and payroll data, and secure login with JWT and role-based access control (RBAC).
+             <br>
+             <b>AI Integration:</b> ML models trained for salary prediction using regression techniques, clustering for role-based salary grouping, and anomaly detection for payroll inconsistencies.
+             <br>
+             <b>Core Features:</b> Admin/HR authentication, employee profile management, historical salary tracking, salary slip generation, AI-powered salary prediction, and benchmarking against market data.
+             <br>
+             <b>Design Features:</b> Role-based dashboards (Admin, HR, Employee), exportable reports, chart-based salary trends, filterable data tables, and dark/light mode toggle.
+             <br>
+             <b>Deployment Ready:</b> Fully functional in VS Code, deployable via Vercel/Netlify for frontend and Render/Railway for backend. Scalable for future enhancements like tax deduction modules, appraisal tracking, and integration with HRMS/ERP systems.
+             </p>
+              <a href="https://github.com/SrijanRoy12/Salary-Management-prediction-System" target="_blank"><strong>👀 View Project</strong></a>
+        </div>
+
 
 
 
@@ -676,256 +2388,1401 @@
 
     </section>
 
-    <!-- Certificate Sections -->
-    <!-- Certificate Sections -->
-     <!-- Projects Section -->
-    <section id="projects">
-        <div class="project-header">
-            <h1>🏆𝘾𝙀𝙍𝙏𝙄𝙁𝙄𝘾𝘼𝙏𝙄𝙊𝙉𝙎🏆</h1>
-        </div>
-        <div class="project-body">        
-        <!-- <div class="project">
-            <div class="certificate-container">
-   Part 1: Image 
-              <div class="certificate-image">
-                <img id="CERTIFICATE" src="nus logo.png" alt="CERTIFICATION logo">
-              </div>
 
-   Part 2: Certificate Details 
-              <div class="certificate-details">
-                <h2>🟢 Study Abroad Program at NUS (National University Of Singapore)</h2>
-                  <a href="nus.pdf" target="_blank">View Certificate</a>
-              </div>
-            </div>
-        </div> -->
 
-        <!-- Certificate 1 -->
-<div class="project">
-  <div class="certificate-image">
-    <img id="CERTIFICATE" src="nus logo.png" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝙎𝙩𝙪𝙙𝙮 𝘼𝙗𝙧𝙤𝙖𝙙 𝙋𝙧𝙤𝙜𝙧𝙖𝙢 𝙖𝙩 𝙉𝙐𝙎 (𝙉𝙖𝙩𝙞𝙤𝙣𝙖𝙡 𝙐𝙣𝙞𝙫𝙚𝙧𝙨𝙞𝙩𝙮 𝙊𝙛 𝙎𝙞𝙣𝙜𝙖𝙥𝙤𝙧𝙚)</h2>
-    <a href="nus.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
 
-<div class="project">
-  <div class="certificate-image">
-    <img src="tcs logo.png" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘽𝙪𝙞𝙨𝙣𝙚𝙨𝙨 𝘿𝙖𝙩𝙖 𝙑𝙞𝙨𝙪𝙖𝙡𝙞𝙨𝙖𝙩𝙞𝙤𝙣</h2>
-    <a href="TCS certifcate Data Visualisation.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
 
-<div class="project">
-  <div class="certificate-image">
-    <img src="tcs logo.png" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝙂𝙚𝙣 𝘼𝙄 𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘿𝙖𝙩𝙖 𝘼𝙣𝙖𝙡𝙮𝙩𝙞𝙘𝙨 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣</h2>
-    <a href="TCS GEN AI powered.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
 
-<div class="project">
-  <div class="certificate-image">
-    <img src="Accenture-Logo.png" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘼𝙘𝙘𝙚𝙣𝙩𝙪𝙧𝙚 𝙎𝙤𝙛𝙩𝙬𝙖𝙧𝙚 𝙀𝙣𝙜𝙞𝙣𝙚𝙚𝙧𝙞𝙣𝙜 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣</h2>
-    <a href="Accenture Software engineering Job Simulation.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
 
-<div class="project">
-  <div class="certificate-image">
-    <img src="Accenture-Logo.png" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘼𝙘𝙘𝙚𝙣𝙩𝙪𝙧𝙚 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮 𝘾𝙤𝙣𝙨𝙪𝙡𝙩𝙞𝙣𝙜 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣</h2>
-    <a href="Accenture Technology Consulting Job Simulation.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
 
-<div class="project">
-  <div class="certificate-image">
-    <img src="Introduction to ML on AWS.png" alt="CERTIFICATION logo">
+    
+<!-- Animated Certificates Section -->
+<section id="certificates" class="glassmorphism-section">
+  <div class="section-header">
+    <h1 class="glowing-title">
+      <span class="trophy-icon">🏆</span>
+      <span class="title-text">𝘾𝙀𝙍𝙏𝙄𝙁𝙄𝘾𝘼𝙏𝙄𝙊𝙉𝙎</span>
+      <span class="trophy-icon">🏆</span>
+    </h1>
+    <div class="animated-underline"></div>
   </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘼𝙒𝙎 𝙨𝙤𝙡𝙪𝙩𝙞𝙤𝙣 𝘼𝙧𝙘𝙝𝙞𝙩𝙚𝙘𝙩𝙪𝙧𝙚 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣</h2>
-    <a href="AWS solution Architecture Job Simulation.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
+  
+  <div class="certificates-container">
+    <!-- Certificate 1 -->
+    <div class="certificate-card" data-aos="fade-up">
+      <div class="certificate-image-container">
+        <img src="nus logo.png" alt="NUS Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝙎𝙩𝙪𝙙𝙮 𝘼𝙗𝙧𝙤𝙖𝙙 𝙋𝙧𝙤𝙜𝙧𝙖𝙢 𝙖𝙩 𝙉𝙐𝙎 (𝙉𝙖𝙩𝙞𝙤𝙣𝙖𝙡 𝙐𝙣𝙞𝙫𝙚𝙧𝙨𝙞𝙩𝙮 𝙊𝙛 �𝙞𝙣𝙜𝙖𝙥𝙤𝙧𝙚)
+        </h3>
+        <a href="nus.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-<div class="project">
-  <div class="certificate-image">
-    <img src="british airways.jpg" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘽𝙧𝙞𝙩𝙞𝙨𝙝 𝘼𝙞𝙧𝙬𝙖𝙮𝙨 𝘿𝙖𝙩𝙖 𝙎𝙘𝙞𝙚𝙣𝙘𝙚 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣</h2>
-    <a href="British Airways Data Science Job Simulation.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
+    <!-- Certificate 2 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="50">
+      <div class="certificate-image-container">
+        <img src="tcs logo.png" alt="TCS Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘽𝙪𝙨𝙞𝙣𝙚𝙨𝙨 𝘿𝙖𝙩𝙖 𝙑𝙞𝙨𝙪𝙖𝙡𝙞𝙨𝙖𝙩𝙞𝙤𝙣
+        </h3>
+        <a href="TCS certifcate Data Visualisation.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-<div class="project">
-  <div class="certificate-image">
-    <img src="lloyds_bank_logo.png" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝙡𝙡𝙮𝙤𝙙𝙨 𝙗𝙖𝙣𝙠 𝙜𝙧𝙤𝙪𝙥 𝘿𝙖𝙩𝙖 𝙎𝙘𝙞𝙚𝙣𝙘𝙚 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣</h2>
-    <a href="llyods bank grp Data Science Job Simulation.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
+    <!-- Certificate 3 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="certificate-image-container">
+        <img src="tcs logo.png" alt="TCS Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝙂𝙚𝙣 𝘼𝙄 𝙋𝙤𝙬𝙚𝙧𝙚𝙙 �𝙖𝙩𝙖 𝘼𝙣𝙖𝙡𝙮𝙩𝙞𝙘𝙨 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣
+        </h3>
+        <a href="TCS GEN AI powered.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-<div class="project">
-  <div class="certificate-image">
-    <img src="BCG_X.jpg" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘽𝘾𝙂𝙭 𝘿𝙖𝙩𝙖 𝙎𝙘𝙞𝙚𝙣𝙘𝙚 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣</h2>
-    <a href="BCGx Data Science Job Simulation.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
+    <!-- Certificate 4 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="150">
+      <div class="certificate-image-container">
+        <img src="Accenture-Logo.png" alt="Accenture Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘼𝙘𝙘𝙚𝙣𝙩𝙪𝙧𝙚 𝙎𝙤𝙛𝙩𝙬𝙖𝙧𝙚 𝙀𝙣𝙜𝙞𝙣𝙚𝙚𝙧𝙞𝙣𝙜 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣
+        </h3>
+        <a href="Accenture Software engineering Job Simulation.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-<div class="project">
-  <div class="certificate-image">
-    <img src="BCG_X.jpg" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘽𝘾𝙂𝙓 𝙂𝙚𝙣 𝘼𝙄 𝙟𝙤𝙗 𝙨𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣s</h2>
-    <a href="BCGX Gen AI job simulation.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
+    <!-- Certificate 5 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="certificate-image-container">
+        <img src="Accenture-Logo.png" alt="Accenture Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘼𝙘𝙘𝙚𝙣𝙩𝙪𝙧𝙚 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮 𝘾𝙤𝙣𝙨𝙪𝙡𝙩𝙞𝙣𝙜 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣
+        </h3>
+        <a href="Accenture Technology Consulting Job Simulation.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-<!-- Certificate 2 -->
-<div class="project">
-  <div class="certificate-image">
-    <img src="cybersecurity and iot.png" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘾𝙮𝙗𝙚𝙧𝙨𝙚𝙘𝙪𝙧𝙞𝙩𝙮 𝙖𝙣𝙙 𝙄𝙊𝙏</h2>
-    <a href="cybersecurity and iot.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
+    <!-- Certificate 6 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="250">
+      <div class="certificate-image-container">
+        <img src="Introduction to ML on AWS.png" alt="AWS Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘼𝙒𝙎 𝙨𝙤𝙡𝙪𝙩𝙞𝙤𝙣 𝘼𝙧𝙘𝙝𝙞𝙩𝙚𝙘𝙩𝙪𝙧𝙚 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣
+        </h3>
+        <a href="AWS solution Architecture Job Simulation.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-<!-- Certificate 3 -->
-<div class="project">
-  <div class="certificate-image">
-    <img src="Artifical Intelligence and legal issues.jpg" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘼𝙧𝙩𝙞𝙛𝙞𝙘𝙖𝙡 𝙄𝙣𝙩𝙚𝙡𝙡𝙞𝙜𝙚𝙣𝙘𝙚 𝙖𝙣𝙙 𝙇𝙚𝙜𝙖𝙡 𝙄𝙨𝙨𝙪𝙚𝙨</h2>
-    <a href="artificial intelligence and legal issues.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
+    <!-- Certificate 7 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
+      <div class="certificate-image-container">
+        <img src="british airways.jpg" alt="British Airways Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘽𝙧𝙞𝙩𝙞𝙨𝙝 𝘼𝙞𝙧𝙬𝙖𝙮𝙨 𝘿𝙖𝙩𝙖 𝙎𝙘𝙞𝙚𝙣𝙘𝙚 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣
+        </h3>
+        <a href="British Airways Data Science Job Simulation.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-<!-- Certificate 4 -->
-<div class="project">
-  <div class="certificate-image">
-    <img src="Introduction to ML on AWS.png" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝐈𝐧𝐭𝐫𝐨𝐝𝐮𝐜𝐭𝐢𝐨𝐧 𝐭𝐨 𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠 𝐨𝐧 𝐀𝐖𝐒</h2>
-    <a href="Introduction to ml on AWS.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
+    <!-- Certificate 8 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="350">
+      <div class="certificate-image-container">
+        <img src="lloyds_bank_logo.png" alt="Lloyds Bank Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝙡𝙡𝙮𝙤𝙙𝙨 𝙗𝙖𝙣𝙠 𝙜𝙧𝙤𝙪𝙥 𝘿𝙖𝙩𝙖 𝙎𝙘𝙞𝙚𝙣𝙘𝙚 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣
+        </h3>
+        <a href="llyods bank grp Data Science Job Simulation.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-<!-- Certificate 5 -->
-<div class="project">
-  <div class="certificate-image">
-    <img src="Artificial Intelligence for Everyone.png" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘼𝙧𝙩𝙞𝙛𝙞𝙘𝙞𝙖𝙡 𝙄𝙣𝙩𝙚𝙡𝙡𝙞𝙜𝙚𝙣𝙘𝙚 𝙛𝙤𝙧 𝙀𝙫𝙚𝙧𝙮𝙤𝙣𝙚</h2>
-    <a href="AI For everyone .pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
+    <!-- Certificate 9 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="400">
+      <div class="certificate-image-container">
+        <img src="BCG_X.jpg" alt="BCG Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘽𝘾𝙂𝙭 𝘿𝙖𝙩𝙖 𝙎𝙘𝙞𝙚𝙣𝙘𝙚 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣
+        </h3>
+        <a href="BCGx Data Science Job Simulation.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-<!-- Certificate 6 -->
-<div class="project">
-  <div class="certificate-image">
-    <img src="Delloite.png" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘿𝙚𝙡𝙤𝙞𝙩𝙩𝙚 𝘿𝙖𝙩𝙖 𝘼𝙣𝙖𝙡𝙮𝙩𝙞𝙘𝙨</h2>
-    <a href="deloitte data analytics.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div> 
+    <!-- Certificate 10 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="450">
+      <div class="certificate-image-container">
+        <img src="BCG_X.jpg" alt="BCG Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘽𝘾𝙂𝙓 𝙂𝙚𝙣 𝘼𝙄 𝙟𝙤𝙗 𝙨𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣
+        </h3>
+        <a href="BCGX Gen AI job simulation.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-<!-- Certificate 7 -->
-<div class="project">
-  <div class="certificate-image">
-    <img src="Delloite.png" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘿𝙚𝙡𝙤𝙞𝙩𝙩𝙚 𝘾𝙮𝙗𝙚𝙧 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣</h2>
-    <a href="deloitee certificate 1 - Copy.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
+    <!-- Certificate 11 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="500">
+      <div class="certificate-image-container">
+        <img src="cybersecurity and iot.png" alt="Cybersecurity Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘾𝙮𝙗𝙚𝙧𝙨𝙚𝙘𝙪𝙧𝙞𝙩𝙮 𝙖𝙣𝙙 𝙄𝙊𝙏
+        </h3>
+        <a href="cybersecurity and iot.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-<!-- Certificate 8 -->
-<div class="project">
-  <div class="certificate-image">
-    <img src="Delloite.png" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝘿𝙚𝙡𝙤𝙞𝙩𝙩𝙚 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣</h2>
-    <a href="deloitee certificate 2 - Copy.pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
+    <!-- Certificate 12 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="550">
+      <div class="certificate-image-container">
+        <img src="Artifical Intelligence and legal issues.jpg" alt="AI Legal Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘼𝙧𝙩𝙞𝙛𝙞𝙘𝙖𝙡 𝙄𝙣𝙩𝙚𝙡𝙡𝙞𝙜𝙚𝙣𝙘𝙚 𝙖𝙣𝙙 𝙇𝙚𝙜𝙖𝙡 𝙄𝙨𝙨𝙪𝙚𝙨
+        </h3>
+        <a href="artificial intelligence and legal issues.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-<!-- Certificate 9 -->
-<div class="project">
-  <div class="certificate-image">
-    <img src="Introduction to Cyber Attacks.jpg" alt="CERTIFICATION logo">
-  </div>
-  <div class="certificate-details">
-    <h2>🏅 𝙄𝙣𝙩𝙧𝙤𝙙𝙪𝙘𝙩𝙞𝙤𝙣 𝙏𝙤 𝘾𝙮𝙗𝙚𝙧 𝘼𝙩𝙩𝙖𝙘𝙠𝙨</h2>
-    <a href="introduction to cyber attacks .pdf" target="_blank">👀 <strong>𝕍𝕚𝕖𝕨 ℂ𝕖𝕣𝕥𝕚𝕗𝕚𝕔𝕒𝕥𝕖</strong></a>
-  </div>
-</div>
+    <!-- Certificate 13 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="600">
+      <div class="certificate-image-container">
+        <img src="Introduction to ML on AWS.png" alt="AWS ML Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝐈𝐧𝐭𝐫𝐨𝐝𝐮𝐜𝐭𝐢𝐨𝐧 𝐭𝐨 𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐋𝐞𝐚𝐫𝐧𝐢𝐧𝐠 𝐨𝐧 𝐀𝐖𝐒
+        </h3>
+        <a href="Introduction to ml on AWS.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
 
-        </div>
+    <!-- Certificate 14 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="650">
+      <div class="certificate-image-container">
+        <img src="Artificial Intelligence for Everyone.png" alt="AI for Everyone Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘼𝙧𝙩𝙞𝙛𝙞𝙘𝙞𝙖𝙡 𝙄𝙣𝙩𝙚𝙡𝙡𝙞𝙜𝙚𝙣𝙘𝙚 𝙛𝙤𝙧 𝙀𝙫𝙚𝙧𝙮𝙤𝙣𝙚
+        </h3>
+        <a href="AI For everyone .pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Certificate 15 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="700">
+      <div class="certificate-image-container">
+        <img src="Delloite.png" alt="Deloitte Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘿𝙚𝙡𝙤𝙞𝙩𝙩𝙚 𝘿𝙖𝙩𝙖 𝘼𝙣𝙖𝙡𝙮𝙩𝙞𝙘𝙨
+        </h3>
+        <a href="deloitte data analytics.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Certificate 16 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="750">
+      <div class="certificate-image-container">
+        <img src="Delloite.png" alt="Deloitte Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘿𝙚𝙡𝙤𝙞𝙩𝙩𝙚 𝘾𝙮𝙗𝙚𝙧 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣
+        </h3>
+        <a href="deloitee certificate 1 - Copy.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Certificate 17 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="800">
+      <div class="certificate-image-container">
+        <img src="Delloite.png" alt="Deloitte Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝘿𝙚𝙡𝙤𝙞𝙩𝙩𝙚 𝙏𝙚𝙘𝙝𝙣𝙤𝙡𝙤𝙜𝙮 𝙅𝙤𝙗 𝙎𝙞𝙢𝙪𝙡𝙖𝙩𝙞𝙤𝙣
+        </h3>
+        <a href="deloitee certificate 2 - Copy.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Certificate 18 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="850">
+      <div class="certificate-image-container">
+        <img src="Introduction to Cyber Attacks.jpg" alt="Cyber Security Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+          𝙄𝙣𝙩𝙧𝙤𝙙𝙪𝙘𝙩𝙞𝙤𝙣 𝙏𝙤 𝘾𝙮𝙗𝙚𝙧 𝘼𝙩𝙩𝙖𝙘𝙠𝙨
+        </h3>
+        <a href="introduction to cyber attacks .pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator">
+    <span class="scroll-dot"></span>
+    <span class="scroll-dot"></span>
+    <span class="scroll-dot"></span>
+  </div>
 </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-form">
-        <h1><strong>📞 𝘾𝙤𝙣𝙩𝙖𝙘𝙩 𝙈𝙚</strong></h1>
-        <form id="contactForm">
-            <label for="name"><b><strong>🤵‍♂ 𝙉𝙖𝙢𝙚</strong></b></label>
-            <input type="text" id="name" name="name" placeholder="Enter your name ...." required>
+<style>
+/* Certificates Section - Glassmorphism Style */
+.glassmorphism-section {
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  margin: 2rem auto;
+  max-width: 1200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.glassmorphism-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  animation: gradientRotate 15s linear infinite;
+  z-index: -1;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.glowing-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.trophy-icon {
+  animation: bounce 2s infinite;
+}
+
+.title-text {
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.animated-underline {
+  height: 3px;
+  width: 100px;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.8), rgba(255,255,255,0));
+  margin: 1rem auto;
+  border-radius: 3px;
+  animation: underlineFlow 3s infinite linear;
+}
+
+/* Certificates Grid */
+.certificates-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* Certificate Card - Glass Style */
+.certificate-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.certificate-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.certificate-image-container {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.certificate-logo {
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.certificate-hover-effect {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  transform: translate(-25%, -25%) rotate(0deg);
+  transition: all 0.8s ease;
+  z-index: 1;
+}
+
+.certificate-card:hover .certificate-hover-effect {
+  transform: translate(-25%, -25%) rotate(180deg);
+}
+
+.certificate-card:hover .certificate-logo {
+  filter: brightness(1) invert(0) drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+  transform: scale(1.1);
+}
+
+.certificate-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.certificate-title {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.medal-icon {
+  animation: medalSpin 1s ease;
+}
+
+/* View Certificate Button */
+.view-certificate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.view-certificate-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.5s;
+}
+
+.view-certificate-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.view-certificate-btn:hover::before {
+  left: 100%;
+}
+
+.pulse-btn {
+  animation: pulse 2s infinite;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+
+.scroll-dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: dotPulse 1.5s infinite ease-in-out;
+}
+
+.scroll-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.scroll-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Animations */
+@keyframes gradientRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes underlineFlow {
+  0% { background-position: -100px 0; }
+  100% { background-position: 100px 0; }
+}
+
+@keyframes medalSpin {
+  0% { transform: rotateY(0deg) scale(0.5); opacity: 0; }
+  100% { transform: rotateY(360deg) scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .certificates-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .glowing-title {
+    font-size: 2rem;
+  }
+  
+  .glassmorphism-section {
+    padding: 2rem 1rem;
+    margin: 1rem;
+    border-radius: 15px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Add 3D tilt effect to certificate cards
+  const cards = document.querySelectorAll('.certificate-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const angleX = (y - centerY) / 20;
+      const angleY = (centerX - x) / 20;
+      
+      card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+    });
     
-            <label for="email"><b><strong>📧 𝙀𝙢𝙖𝙞𝙡</strong></b></label>
-            <input type="email" id="email" name="email" placeholder="Enter your email ...." required>
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+    });
+  });
+  
+  // Add scroll animation for cards
+  const observerOptions = {
+    threshold: 0.1
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+  
+  document.querySelectorAll('.certificate-card').forEach(card => {
+    card.style.opacity = 0;
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(card);
+  });
+});
+</script>
 
-            <label for="message"><b><strong>💬 𝙈𝙚𝙨𝙨𝙖𝙜𝙚</strong></b></label>
-            <textarea id="message" name="message" placeholder="Write your message ...." required></textarea>
 
-            <button type="submit"><strong>👉🏻 𝙎𝙚𝙣𝙙 𝙈𝙚𝙨𝙨𝙖𝙜𝙚</strong></button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Animated Glass Contact Form with Continuous Animations -->
+<section id="contact" class="contact-section">
+    <div class="contact-container">
+        <h1 class="contact-title">
+            <span class="emoji">📞</span>
+            <span class="text">Contact Me</span>
+        </h1>
+        
+        <form id="contactForm" class="contact-form">
+            <div class="form-group" style="--delay: 0.1s">
+                <label for="name" class="form-label">
+                    <span class="emoji">🤵‍♂</span>
+                    <span class="label-text">Name</span>
+                </label>
+                <input type="text" id="name" name="name" placeholder="Enter your name..." required>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="form-group" style="--delay: 0.2s">
+                <label for="email" class="form-label">
+                    <span class="emoji">📧</span>
+                    <span class="label-text">Email</span>
+                </label>
+                <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="form-group" style="--delay: 0.3s">
+                <label for="message" class="form-label">
+                    <span class="emoji">💬</span>
+                    <span class="label-text">Message</span>
+                </label>
+                <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+                <div class="underline"></div>
+            </div>
+            
+            <button type="submit" class="submit-btn" style="--delay: 0.4s">
+                <span class="emoji">✉️</span>
+                <span class="btn-text">Send Message</span>
+                <span class="send-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                    </svg>
+                </span>
+            </button>
         </form>
-        <p id="formMessage"></p>
-    </section>
+        
+        <div id="formMessage" class="form-message"></div>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <div class="footer">
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/srijan-roy-iemians/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/SrijanRoy12" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=roysrijan53@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-            <a href="https://x.com/home" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
-            <a href="https://www.instagram.com/its_ur_roy123/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-       </div>
-<small>
-  <strong>
-    <span style="color: #FF9933;">© 2️⃣0️⃣2️⃣5️⃣ 𝙎𝙧𝙞𝙟𝙖𝙣❜𝙨 𝙋𝙤𝙧𝙩𝙛𝙤𝙡𝙞𝙤 |</span>
-    <span style="color: #FFFFFF;"> 𝘾𝙧𝙚𝙖𝙩𝙞𝙣𝙜 𝙬𝙞𝙩𝙝 𝙘𝙤𝙣𝙫𝙞𝙘𝙩𝙞𝙤𝙣, 𝙘𝙤𝙙𝙞𝙣𝙜 𝙬𝙞𝙩𝙝 𝙥𝙪𝙧𝙥𝙤𝙨𝙚 |</span>
-    <span style="color: #138808;"> 𝘼𝙡𝙡 𝙧𝙞𝙜𝙝𝙩𝙨 𝙧𝙚𝙨𝙚𝙧𝙫𝙚𝙙</span>
-  </strong>
-</small>
+<style>
+.contact-section {
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glass morphism container with continuous pulse animation */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    padding: 40px;
+    color: #fff;
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    }
+    100% {
+        transform: scale(1.01);
+        box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+    }
+}
+
+.contact-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    animation: wiggle 2s infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-3px);
+    }
+    75% {
+        transform: translateX(3px);
+    }
+}
+
+input, textarea {
+    width: 100%;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #fff;
+    transition: all 0.4s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    animation: inputGlow 2s infinite alternate;
+}
+
+@keyframes inputGlow {
+    0% {
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    100% {
+        box-shadow: 0 2px 15px rgba(255,255,255,0.1);
+    }
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    animation: placeholderPulse 2s infinite;
+}
+
+@keyframes placeholderPulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    animation: none;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: width 0.4s ease;
+}
+
+.form-group:focus-within .underline {
+    width: 100%;
+    animation: underlinePulse 2s infinite;
+}
+
+@keyframes underlinePulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+    margin-top: 15px;
+    overflow: hidden;
+    animation: btnPulse 2s infinite;
+}
+
+@keyframes btnPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    20%, 100% {
+        left: 100%;
+    }
+}
+
+.send-icon {
+    display: inline-flex;
+    align-items: center;
+    animation: fly 2s infinite;
+}
+
+@keyframes fly {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+.form-message {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+    animation: messagePulse 2s infinite;
+}
+
+@keyframes messagePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 30px 20px;
+    }
+    
+    .contact-title {
+        font-size: 1.8rem;
+    }
+    
+    input, textarea {
+        padding: 14px;
+    }
+    
+    /* Reduce animation intensity on mobile */
+    .contact-container {
+        animation: pulseMobile 2s infinite alternate;
+    }
+    
+    @keyframes pulseMobile {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.005);
+        }
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    
+    // Form submission with animated success message
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Animate button while "sending"
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+            <span class="btn-text">Sending...</span>
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        `;
+        
+        // Create loading dots animation
+        const dots = submitBtn.querySelectorAll('.loading-dots span');
+        dots.forEach((dot, index) => {
+            dot.style.animation = `dotPulse 1s infinite ${index * 0.2}s`;
+        });
+        
+        // Simulate form submission
+        setTimeout(() => {
+            // Show success message
+            formMessage.textContent = "Message sent successfully! 🎉";
+            formMessage.style.display = "block";
+            formMessage.style.background = "rgba(255, 255, 255, 0.2)";
+            formMessage.style.color = "#fff";
+            
+            // Reset form and button after showing message
+            setTimeout(() => {
+                contactForm.reset();
+                formMessage.style.display = "none";
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `
+                    <span class="emoji">✉️</span>
+                    <span class="btn-text">Send Message</span>
+                    <span class="send-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                        </svg>
+                    </span>
+                `;
+            }, 3000);
+        }, 1500);
+    });
+    
+    // Add continuous floating effect to form container
+    function floatContainer() {
+        const contactContainer = document.querySelector('.contact-container');
+        let floatY = 0;
+        let floatX = 0;
+        let directionY = 1;
+        let directionX = 1;
+        
+        setInterval(() => {
+            floatY += 0.1 * directionY;
+            floatX += 0.05 * directionX;
+            
+            if (Math.abs(floatY) > 3) directionY *= -1;
+            if (Math.abs(floatX) > 2) directionX *= -1;
+            
+            contactContainer.style.transform = `translate(${floatX}px, ${floatY}px)`;
+        }, 50);
+    }
+    
+    floatContainer();
+    
+    // Add style for loading dots
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes dotPulse {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        .loading-dots span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+            margin: 0 2px;
+        }
+    `;
+    document.head.appendChild(style);
+});
+</script>
+
+
+
+
+
+
+   <!-- Animated Footer -->
+<div class="footer">
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/srijan-roy-iemians/" target="_blank" class="social-icon" data-tooltip="LinkedIn">
+      <i class="fa-brands fa-linkedin"></i>
+      <span class="liquid-bg"></span>
+    </a>
+    <a href="https://github.com/SrijanRoy12" target="_blank" class="social-icon" data-tooltip="GitHub">
+      <i class="fa-brands fa-square-github"></i>
+      <span class="liquid-bg"></span>
+    </a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=roysrijan53@gmail.com" class="social-icon" data-tooltip="Email">
+      <i class="fa-regular fa-envelope"></i>
+      <span class="liquid-bg"></span>
+    </a>
+    <a href="https://x.com/home" target="_blank" class="social-icon" data-tooltip="Twitter">
+      <i class="fa-brands fa-square-x-twitter"></i>
+      <span class="liquid-bg"></span>
+    </a>
+    <a href="https://www.instagram.com/its_ur_roy123/" target="_blank" class="social-icon" data-tooltip="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+      <span class="liquid-bg"></span>
+    </a>
+  </div>
+  
+  <div class="copyright-text">
+    <small>
+      <strong>
+        <span class="copyright-part" style="--color: #FF9933;">© 2️⃣0️⃣2️⃣5️⃣ 𝙎𝙧𝙞𝙟𝙖𝙣❜𝙨 𝙋𝙤𝙧𝙩𝙛𝙤𝙡𝙞𝙤 |</span>
+        <span class="copyright-part" style="--color: #FFFFFF;"> 𝘾𝙧𝙚𝙖𝙩𝙞𝙣𝙜 𝙬𝙞𝙩𝙝 𝙘𝙤𝙣𝙫𝙞𝙘𝙩𝙞𝙤𝙣, 𝙘𝙤𝙙𝙞𝙣𝙜 𝙬𝙞𝙩𝙝 𝙥𝙪𝙧𝙥𝙤𝙨𝙚 |</span>
+        <span class="copyright-part" style="--color: #138808;"> 𝘼𝙡𝙡 𝙧𝙞𝙜𝙝𝙩𝙨 𝙧𝙚𝙨𝙚𝙧𝙫𝙚𝙙</span>
+      </strong>
+    </small>
+  </div>
+  
+  <div class="footer-wave">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="wave-fill"></path>
+      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="wave-fill"></path>
+      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="wave-fill"></path>
+    </svg>
+  </div>
 </div>
+
+<style>
+/* Footer Styles */
+.footer {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  padding: 40px 0 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon i {
+  position: relative;
+  z-index: 2;
+}
+
+.liquid-bg {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  z-index: 1;
+}
+
+.social-icon:hover .liquid-bg {
+  animation: liquidFlow 1.5s linear infinite;
+}
+
+/* Individual icon colors */
+.social-icon:nth-child(1) { background: #0A66C2; } /* LinkedIn */
+.social-icon:nth-child(2) { background: #333; } /* GitHub */
+.social-icon:nth-child(3) { background: #EA4335; } /* Gmail */
+.social-icon:nth-child(4) { background: #000; } /* Twitter */
+.social-icon:nth-child(5) { background: #E4405F; } /* Instagram */
+
+.social-icon:hover {
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Tooltip */
+.social-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.social-icon:hover::after {
+  opacity: 1;
+  bottom: -35px;
+}
+
+/* Copyright Text */
+.copyright-text {
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.copyright-part {
+  position: relative;
+  display: inline-block;
+  padding: 0 5px;
+  color: var(--color);
+  transition: all 0.3s ease;
+}
+
+.copyright-part::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color);
+  transition: width 0.3s ease;
+}
+
+.copyright-part:hover {
+  text-shadow: 0 0 10px var(--color);
+}
+
+.copyright-part:hover::after {
+  width: 100%;
+}
+
+/* Animated Wave */
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+.wave-fill {
+  fill: rgba(255, 255, 255, 0.05);
+  animation: waveAnimation 10s linear infinite;
+}
+
+.wave-fill:nth-child(2) {
+  animation-delay: -5s;
+  animation-duration: 15s;
+}
+
+.wave-fill:nth-child(3) {
+  animation-delay: -2s;
+  animation-duration: 12s;
+}
+
+/* Animations */
+@keyframes liquidFlow {
+  0% { transform: rotate(45deg) translateY(-200px); }
+  100% { transform: rotate(45deg) translateY(0); }
+}
+
+@keyframes waveAnimation {
+  0% { transform: translateX(0) translateZ(0) scaleY(1); }
+  50% { transform: translateX(-25%) translateZ(0) scaleY(0.5); }
+  100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+}
+
+/* Social icons entrance animation */
+.social-icon {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+.social-icon:nth-child(1) { animation-delay: 0.1s; }
+.social-icon:nth-child(2) { animation-delay: 0.2s; }
+.social-icon:nth-child(3) { animation-delay: 0.3s; }
+.social-icon:nth-child(4) { animation-delay: 0.4s; }
+.social-icon:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .social-links {
+    gap: 15px;
+  }
+  
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+  
+  .copyright-text {
+    font-size: 0.8rem;
+  }
+  
+  .footer-wave {
+    height: 60px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Add ripple effect to social icons
+  const socialIcons = document.querySelectorAll('.social-icon');
+  
+  socialIcons.forEach(icon => {
+    icon.addEventListener('click', function(e) {
+      // Create ripple element
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple-effect';
+      ripple.style.left = (e.pageX - this.getBoundingClientRect().left - this.offsetWidth/2) + 'px';
+      ripple.style.top = (e.pageY - this.getBoundingClientRect().top - this.offsetHeight/2) + 'px';
+      this.appendChild(ripple);
+      
+      // Remove ripple after animation
+      setTimeout(() => {
+        ripple.remove();
+      }, 1000);
+    });
+  });
+  
+  // Add ripple styles dynamically
+  const style = document.createElement('style');
+  style.textContent = `
+    .ripple-effect {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    }
+    
+    @keyframes ripple {
+      to {
+        transform: scale(2.5);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+});
+</script>
+
+
+
 
     <script>
         // Show splash screen for 5 seconds, then show main content
