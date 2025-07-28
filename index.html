@@ -110,10 +110,6 @@
 
 
 
-
-
-
-
     <!-- Navigation -->
 <nav class="navbar">
     <div class="nav-container">
@@ -2591,7 +2587,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="project-card" data-category="ai">
                 <div class="project-card-inner">
                     <div class="project-card-front">
-                        <div class="project-icon">🚗🚥</div>
+                        <div class="project-icon">🚗🚦</div>
                         <h3 class="project-title">Smart Drive Monitoring System</h3>
                         <div class="project-tags">
                             <span class="tag">Python</span>
@@ -2605,6 +2601,58 @@ document.addEventListener('DOMContentLoaded', function() {
                        <p>Implements a real-time driver monitoring system using computer vision to detect distraction through eye tracking and provides visual and auditory alerts, along with PDF behavior reports.</p>
                         <div class="project-links">
                             <a href="https://github.com/SrijanRoy12/road-smart-driver" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Project 27 -->
+            <div class="project-card" data-category="ai">
+                <div class="project-card-inner">
+                    <div class="project-card-front">
+                        <div class="project-icon">🤖</div>
+                        <h3 class="project-title">Realtime Object Detection System</h3>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">OpenCV</span>
+                            <span class="tag">MediaPipe</span>
+                            <span class="tag">Real-time Systems</span>
+                            <span class="tag">Human-Computer Interaction</span>
+                        </div>
+                    </div>
+                    <div class="project-card-back">
+                       <p>Implements a real-time object detection system using computer vision and deep learning (YOLOv8) to identify and track objects from images, videos, or live webcam feeds, with customizable settings and instant visual feedback.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/SrijanRoy12/Realtime-Object-Detection-" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Project 27 -->
+            <div class="project-card" data-category="web">
+                <div class="project-card-inner">
+                    <div class="project-card-front">
+                        <div class="project-icon">📝</div>
+                        <h3 class="project-title">Resume parser</h3>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flusk</span>
+                            <span class="tag">PyMuPDF (fitz)</span>
+                            <span class="tag">HTML/CSS</span>                       
+                        </div>
+                    </div>
+                    <div class="project-card-back">
+                       <p>Implements a Flask-based AI system to extract structured information from PDF resumes.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/SrijanRoy12/Resume-Parser" target="_blank" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> View Project
                             </a>
                         </div>
@@ -3028,12 +3076,18 @@ document.addEventListener('DOMContentLoaded', function() {
 .project-card:nth-child(27) { animation-delay: 2.7s; }
 .project-card:nth-child(28) { animation-delay: 2.8s; }
 
+.projects-section
+{background: rgba(10, 10, 12, 0);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.104);
+        background-color: transparent;}
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
     .projects-section::before {
-        background: rgba(10, 10, 12, 0.88);
+        background: rgba(10, 10, 12, 0);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.104);
+        background-color: transparent;
     }
     
     .section-title, .section-subtitle {
