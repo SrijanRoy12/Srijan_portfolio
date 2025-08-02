@@ -326,6 +326,178 @@
 </div>
 
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NUS Memories</title>
+  <style>
+    .nus-memories-section {
+      font-family: 'Arial', sans-serif;
+      width: 100%;
+      max-width: 1200px;
+      margin: 40px auto;
+      color: #333;
+    }
+
+    .memories-header {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .memories-title {
+      color: #003D7C;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .memories-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #E57200;
+      animation: grow 1s ease-out forwards;
+    }
+
+    @keyframes grow {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    .memories-subtitle {
+      font-size: 1.2rem;
+      color: #555;
+      margin-top: 15px;
+    }
+
+    .photos-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap; /* keep them side-by-side */
+      gap: 30px;
+    }
+
+    .photo-card {
+      width: 45%;
+      max-width: 450px;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      background: rgba(255,255,255,0.9);
+      animation: photoAppear 0.8s ease-out;
+    }
+
+    .photo-card:nth-child(1) { animation-delay: 0.3s; }
+    .photo-card:nth-child(2) { animation-delay: 0.5s; }
+
+    @keyframes photoAppear {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .memory-photo {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .photo-card:hover .memory-photo {
+      transform: scale(1.03);
+    }
+
+    .photo-caption {
+      padding: 20px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #003D7C;
+      background: rgba(255,255,255,0.9);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .photos-container {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .photo-card {
+        width: 90%;
+      }
+
+      .memories-title {
+        font-size: 2rem;
+      }
+
+      .memories-subtitle {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="nus-memories-section">
+    <div class="memories-header">
+      <h2 class="memories-title">𝐌𝐲 𝐌𝐞𝐦𝐨𝐫𝐚𝐛𝐥𝐞 𝐌𝐨𝐦𝐞𝐧𝐭𝐬 𝐢𝐧 𝐍𝐔𝐒</h2>
+      <p class="memories-subtitle">🌟𝘊𝘦𝘭𝘦𝘣𝘳𝘢𝘵𝘪𝘯𝘨 𝘮𝘺 𝘫𝘰𝘶𝘳𝘯𝘦𝘺 𝘢𝘵 𝘵𝘩𝘦 𝘕𝘢𝘵𝘪𝘰𝘯𝘢𝘭 𝘜𝘯𝘪𝘷𝘦𝘳𝘴𝘪𝘵𝘺 𝘰𝘧 𝘚𝘪𝘯𝘨𝘢𝘱𝘰𝘳𝘦🌟</p>
+    </div>
+
+    <div class="photos-container">
+      <div class="photo-card">
+      <img src="nus 1.jpg" alt="Study Abroad Program" class="memory-photo">
+      <div class="photo-caption"><strong>𝓢𝓽𝓾𝓭𝔂 𝓐𝓫𝓻𝓸𝓪𝓭 𝓟𝓻𝓸𝓰𝓻𝓪𝓶</strong></div>
+    </div>
+
+
+      <div class="photo-card">
+      <img src="nus 2.jpg" alt="Study Abroad Program" class="memory-photo">
+      <div class="photo-caption"><strong>𝓢𝓽𝓾𝓭𝔂 𝓐𝓫𝓻𝓸𝓪𝓭 𝓟𝓻𝓸𝓰𝓻𝓪𝓶</strong></div>
+    </div>
+
+    <div class="photo-card">
+      <img src="nus3.jpg" alt="Study Abroad Program" class="memory-photo">
+      <div class="photo-caption"><strong>𝓢𝓽𝓾𝓭𝔂 𝓐𝓫𝓻𝓸𝓪𝓭 𝓟𝓻𝓸𝓰𝓻𝓪𝓶</strong></div>
+    </div>
+
+    </div>
+  </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Stats Section -->
 <section id="stats" class="stats-section">
     <div class="container">
@@ -1079,6 +1251,11 @@ document.addEventListener('DOMContentLoaded', function() {
           <p>𝒥𝓊𝓃𝒾𝑜𝓇 𝑅𝑒𝓈𝑒𝒶𝓇𝒸𝒽 𝒜𝓈𝓈𝒾𝓈𝓉𝒶𝓃𝓉 𝒶𝓉 𝐼𝐸𝒟𝒞 𝐿𝒶𝒷,𝐼𝐸𝑀.</p>
         </div>
       </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="--dot-color: #9b59b6"></div>
+        <div class="timeline-content">
+          <p>𝒜𝐼 𝐼𝓃𝓃𝑜𝓋𝒶𝓉𝒾𝓋𝑒 𝐼𝒹𝑒𝒶 𝒮𝓊𝒷𝓂𝒾𝓉𝓉𝑒𝓇–𝒢𝒟𝒢 𝒮𝑜𝓁𝓊𝓉𝒾𝑜𝓃 𝒞𝒽𝒶𝓁𝓁𝑒𝓃𝑔𝑒 𝑜𝓃 𝒞𝒶𝓂𝓅𝓊𝓈 (𝐻𝒶𝒸𝓀𝟤𝒮𝓀𝒾𝓁𝓁) 𝟤𝟢𝟤𝟧</p>
+        </div>
       <div class="timeline-item">
         <div class="timeline-dot" style="--dot-color: #8e44ad"></div>
         <div class="timeline-content">
@@ -3992,6 +4169,25 @@ document.addEventListener('DOMContentLoaded', function() {
           𝘽𝙪𝙨𝙞𝙣𝙚𝙨𝙨 𝘿𝙖𝙩𝙖 𝙑𝙞𝙨𝙪𝙖𝙡𝙞𝙨𝙖𝙩𝙞𝙤𝙣
         </h3>
         <a href="TCS certifcate Data Visualisation.pdf" target="_blank" class="view-certificate-btn pulse-btn">
+          <span class="eye-icon">👁️</span>
+          <span class="btn-text">View Certificate</span>
+        </a>
+      </div>
+    </div>
+
+
+    <!-- Certificate 2 -->
+    <div class="certificate-card" data-aos="fade-up" data-aos-delay="50">
+      <div class="certificate-image-container">
+        <img src="gdg logo.png" alt="GDG Logo" class="certificate-logo">
+        <div class="certificate-hover-effect"></div>
+      </div>
+      <div class="certificate-content">
+        <h3 class="certificate-title">
+          <span class="medal-icon">🏅</span>
+           GDG on Campus Solution Challenge India!
+        </h3>
+        <a href="Hack2skill-Certificate.pdf" target="_blank" class="view-certificate-btn pulse-btn">
           <span class="eye-icon">👁️</span>
           <span class="btn-text">View Certificate</span>
         </a>
