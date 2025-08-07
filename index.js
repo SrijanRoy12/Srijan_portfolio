@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Typed.js animation for dynamic text
     if (typeof Typed !== "undefined") {
         new Typed(".auto-type", {
-            strings: ["a Student,", "a Programmer,","a Frontend Developer,", "a Machine Learning Enthusiast,", "a Project Guider"],
+            strings: ["a Student,", "a Programmer,","a Frontend Developer,","a Data Science & Backend Data Engineer,", "a Machine Learning Enthusiast,", "a Project Guider"],
             typeSpeed: 100,
             backSpeed: 50,
             loop: true
