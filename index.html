@@ -493,6 +493,318 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Connect Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles that will adapt to your portfolio */
+        .qr-connect-section {
+            --primary: inherit; /* Will inherit from your portfolio */
+            --secondary: inherit;
+            --text-color: inherit;
+            --bg-blur: 8px;
+            --section-spacing: 40px;
+            
+            font-family: 'Poppins', sans-serif;
+            width: 100%;
+            max-width: 1000px;
+            margin: var(--section-spacing) auto;
+            position: relative;
+        }
+        
+        /* Glassmorphism container */
+        .qr-container-wrapper {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(var(--bg-blur));
+            -webkit-backdrop-filter: blur(var(--bg-blur));
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .qr-container-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+        }
+        
+        /* Animated border */
+        .qr-container-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                          rgba(255,255,255,0.8) 0%, 
+                          var(--primary) 50%, 
+                          rgba(255,255,255,0.8) 100%);
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: -200% center; }
+        }
+        
+        /* Section title */
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--text-color);
+            text-align: center;
+            position: relative;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        
+        /* QR code grid */
+        .qr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        /* Individual QR code card */
+        .qr-card {
+            perspective: 1000px;
+        }
+        
+        .qr-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .qr-card:hover .qr-card-inner {
+            transform: rotateY(10deg) scale(1.03);
+        }
+        
+        .qr-card-front, 
+        .qr-card-back {
+            position: relative;
+            width: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .qr-card-front {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .qr-img-container {
+            width: 140px;
+            height: 140px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .qr-card:hover .qr-img-container {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .qr-img-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .qr-label {
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 10px;
+            font-size: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .qr-card:hover .qr-label {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Floating particles background (optional) */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .qr-container-wrapper {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .qr-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .qr-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .qr-img-container {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="qr-connect-section">
+        <div class="particles" id="particles"></div>
+        <div class="qr-container-wrapper">
+            <h2 class="section-title">Scan Me To Connect</h2>
+            <div class="qr-grid">
+                <!-- QR Code 1 -->
+                <div class="qr-card">
+                    <div class="qr-card-inner">
+                        <div class="qr-card-front">
+                            <div class="qr-img-container">
+                                <img src="Linkdln-1024.png" alt="LinkedIn QR Code">
+                            </div>
+                            <p class="qr-label">LinkedIn</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- QR Code 2 -->
+                <div class="qr-card">
+                    <div class="qr-card-inner">
+                        <div class="qr-card-front">
+                            <div class="qr-img-container">
+                                <img src="Github-1024.png" alt="Github QR Code">
+                            </div>
+                            <p class="qr-label">Github</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- QR Code 3 -->
+                <div class="qr-card">
+                    <div class="qr-card-inner">
+                        <div class="qr-card-front">
+                            <div class="qr-img-container">
+                                <img src="Discord-1024.png" alt="Discord QR Code">
+                            </div>
+                            <p class="qr-label">Discord</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- QR Code 4 -->
+                <div class="qr-card">
+                    <div class="qr-card-inner">
+                        <div class="qr-card-front">
+                            <div class="qr-img-container">
+                                <img src="Twitter-1024.png" alt="Twitter QR Code">
+                            </div>
+                            <p class="qr-label">Twitter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const posX = Math.random() * 100;
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                const opacity = Math.random() * 0.4 + 0.2;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.opacity = opacity;
+                
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
 
 
 
