@@ -5910,420 +5910,215 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<!-- Animated Glass Contact Form with Continuous Animations -->
-<section id="contact" class="contact-section">
-    <div class="contact-container">
-        <h1 class="contact-title">
-            <span class="emoji">📞</span>
-            <span class="text">Contact Me</span>
-        </h1>
-        
-        <form id="contactForm" class="contact-form">
-            <div class="form-group" style="--delay: 0.1s">
-                <label for="name" class="form-label">
-                    <span class="emoji">🤵‍♂</span>
-                    <span class="label-text">Name</span>
-                </label>
-                <input type="text" id="name" name="name" placeholder="Enter your name..." required>
-                <div class="underline"></div>
-            </div>
-            
-            <div class="form-group" style="--delay: 0.2s">
-                <label for="email" class="form-label">
-                    <span class="emoji">📧</span>
-                    <span class="label-text">Email</span>
-                </label>
-                <input type="email" id="email" name="email" placeholder="Enter your email..." required>
-                <div class="underline"></div>
-            </div>
-            
-            <div class="form-group" style="--delay: 0.3s">
-                <label for="message" class="form-label">
-                    <span class="emoji">💬</span>
-                    <span class="label-text">Message</span>
-                </label>
-                <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
-                <div class="underline"></div>
-            </div>
-            
-            <button type="submit" class="submit-btn" style="--delay: 0.4s">
-                <span class="emoji">✉️</span>
-                <span class="btn-text">Send Message</span>
-                <span class="send-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-                    </svg>
-                </span>
-            </button>
-        </form>
-        
-        <div id="formMessage" class="form-message"></div>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form - Glassmorphism + EmailJS</title>
 
-<style>
-.contact-section {
-    padding: 80px 20px;
-    position: relative;
-    overflow: hidden;
-}
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-/* Glass morphism container with continuous pulse animation */
-.contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    padding: 40px;
-    color: #fff;
-    animation: pulse 2s infinite alternate;
-}
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("JTAWD87TtQAN0RENe"); // ✅ Your Public Key
+    })();
+  </script>
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  <style>
+    /* ===== Reset & Global Styles ===== */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: #fff; /* Keep text white for visibility */
     }
-    100% {
-        transform: scale(1.01);
-        box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+
+    /* ===== Contact Section ===== */
+    .contact-section {
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
     }
-}
 
-.contact-title {
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.form-group {
-    position: relative;
-}
-
-.form-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    animation: wiggle 2s infinite;
-}
-
-@keyframes wiggle {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-3px);
-    }
-    75% {
-        transform: translateX(3px);
-    }
-}
-
-input, textarea {
-    width: 100%;
-    padding: 16px;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    color: #fff;
-    transition: all 0.4s ease;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    animation: inputGlow 2s infinite alternate;
-}
-
-@keyframes inputGlow {
-    0% {
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    100% {
-        box-shadow: 0 2px 15px rgba(255,255,255,0.1);
-    }
-}
-
-input::placeholder, textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-    animation: placeholderPulse 2s infinite;
-}
-
-@keyframes placeholderPulse {
-    0%, 100% {
-        opacity: 0.6;
-    }
-    50% {
-        opacity: 0.8;
-    }
-}
-
-input:focus, textarea:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    animation: none;
-}
-
-.underline {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.8);
-    transition: width 0.4s ease;
-}
-
-.form-group:focus-within .underline {
-    width: 100%;
-    animation: underlinePulse 2s infinite;
-}
-
-@keyframes underlinePulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.6;
-    }
-}
-
-textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.submit-btn {
-    position: relative;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: none;
-    padding: 16px 28px;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all 0.4s ease;
-    backdrop-filter: blur(5px);
-    margin-top: 15px;
-    overflow: hidden;
-    animation: btnPulse 2s infinite;
-}
-
-@keyframes btnPulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.03);
-    }
-}
-
-.submit-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: 0.5s;
-    animation: shine 2s infinite;
-}
-
-@keyframes shine {
-    0% {
-        left: -100%;
-    }
-    20%, 100% {
-        left: 100%;
-    }
-}
-
-.send-icon {
-    display: inline-flex;
-    align-items: center;
-    animation: fly 2s infinite;
-}
-
-@keyframes fly {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(5px);
-    }
-}
-
-.form-message {
-    margin-top: 25px;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    display: none;
-    animation: messagePulse 2s infinite;
-}
-
-@keyframes messagePulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.02);
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+    /* Glassmorphism Container */
     .contact-container {
-        padding: 30px 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      padding: 40px;
+      animation: pulse 2s infinite alternate;
     }
-    
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+      100% { transform: scale(1.01); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    }
+
     .contact-title {
-        font-size: 1.8rem;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: bounce 2s infinite;
     }
-    
-    input, textarea {
-        padding: 14px;
-    }
-    
-    /* Reduce animation intensity on mobile */
-    .contact-container {
-        animation: pulseMobile 2s infinite alternate;
-    }
-    
-    @keyframes pulseMobile {
-        0% {
-            transform: scale(1);
-        }
-        100% {
-            transform: scale(1.005);
-        }
-    }
-}
-</style>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
-    
-    // Form submission with animated success message
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Animate button while "sending"
-        const submitBtn = document.querySelector('.submit-btn');
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `
-            <span class="btn-text">Sending...</span>
-            <div class="loading-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        `;
-        
-        // Create loading dots animation
-        const dots = submitBtn.querySelectorAll('.loading-dots span');
-        dots.forEach((dot, index) => {
-            dot.style.animation = `dotPulse 1s infinite ${index * 0.2}s`;
-        });
-        
-        // Simulate form submission
-        setTimeout(() => {
-            // Show success message
-            formMessage.textContent = "Message sent successfully! 🎉";
-            formMessage.style.display = "block";
-            formMessage.style.background = "rgba(255, 255, 255, 0.2)";
-            formMessage.style.color = "#fff";
-            
-            // Reset form and button after showing message
-            setTimeout(() => {
-                contactForm.reset();
-                formMessage.style.display = "none";
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = `
-                    <span class="emoji">✉️</span>
-                    <span class="btn-text">Send Message</span>
-                    <span class="send-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-                        </svg>
-                    </span>
-                `;
-            }, 3000);
-        }, 1500);
-    });
-    
-    // Add continuous floating effect to form container
-    function floatContainer() {
-        const contactContainer = document.querySelector('.contact-container');
-        let floatY = 0;
-        let floatX = 0;
-        let directionY = 1;
-        let directionX = 1;
-        
-        setInterval(() => {
-            floatY += 0.1 * directionY;
-            floatX += 0.05 * directionX;
-            
-            if (Math.abs(floatY) > 3) directionY *= -1;
-            if (Math.abs(floatX) > 2) directionX *= -1;
-            
-            contactContainer.style.transform = `translate(${floatX}px, ${floatY}px)`;
-        }, 50);
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
-    
-    floatContainer();
-    
-    // Add style for loading dots
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes dotPulse {
-            0%, 100% { opacity: 0.2; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-        .loading-dots span {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: white;
-            margin: 0 2px;
-        }
-    `;
-    document.head.appendChild(style);
-});
-</script>
+
+    .contact-form { display: flex; flex-direction: column; gap: 25px; }
+    .form-group { position: relative; }
+
+    .form-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      animation: wiggle 2s infinite;
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-3px); }
+      75% { transform: translateX(3px); }
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #fff;
+      transition: all 0.4s ease;
+      animation: inputGlow 2s infinite alternate;
+    }
+
+    @keyframes inputGlow {
+      0% { box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+      100% { box-shadow: 0 2px 15px rgba(255,255,255,0.15); }
+    }
+
+    input::placeholder, textarea::placeholder { color: rgba(255, 255, 255, 0.6); }
+    textarea { min-height: 150px; resize: vertical; }
+
+    .submit-btn {
+      background: rgba(255, 255, 255, 0.25);
+      color: white;
+      border: none;
+      padding: 16px 28px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.4s ease;
+      margin-top: 15px;
+      animation: btnPulse 2s infinite;
+    }
+
+    @keyframes btnPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .contact-container { padding: 30px 20px; }
+      .contact-title { font-size: 1.8rem; }
+      input, textarea { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== CONTACT FORM ===== -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <h1 class="contact-title">📞 Contact Me</h1>
+
+      <form id="contactForm" class="contact-form">
+        <div class="form-group">
+          <label class="form-label">🤵‍♂ Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name..." required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">📧 Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">💬 Message</label>
+          <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitButton">
+          ✉️ Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("contactForm");
+      const submitButton = document.getElementById("submitButton");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        submitButton.textContent = "Sending...";
+        submitButton.disabled = true;
+
+        // ✅ Send message via EmailJS
+        emailjs.sendForm("service_99t8p5la", "template_5u0y16a", form)
+          .then(() => {
+            Swal.fire({
+              title: "Message Sent! 📩",
+              text: "Thank you for getting in touch through my portfolio website. I’ll personally review it as soon as possible.",
+              icon: "success",
+              confirmButtonText: "Awesome!",
+              confirmButtonColor: "#6C63FF",
+              background: "#ffffff",
+              color: "#333"
+            });
+            form.reset();
+          })
+          .catch((error) => {
+            console.error("EmailJS Error:", error);
+            Swal.fire({
+              icon: "error",
+              title: "Oops!",
+              text: "Something went wrong. Please try again later.",
+              confirmButtonColor: "#6C63FF"
+            });
+          })
+          .finally(() => {
+            submitButton.textContent = "✉️ Send Message";
+            submitButton.disabled = false;
+          });
+      });
+    });
+  </script>
+
+</body>
+</html>
 
 
 
